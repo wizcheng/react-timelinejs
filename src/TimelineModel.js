@@ -71,7 +71,6 @@ const timeline = (domElement, overrideConfig) => {
         const mouseOverDate = band.xScale.invert(x);
         band.mousemove([mouseOverDate, 0]);
         config.onMouseover({date: mouseOverDate, x, y});
-        // console.log(mouseOverDate);
     }
 
     svg
@@ -111,11 +110,9 @@ const timeline = (domElement, overrideConfig) => {
 
         function showItems(n) {
             var count = 0, n = n || 10;
-            console.log("\n");
             items.forEach(function (d) {
                 count++;
                 if (count > n) return;
-                console.log(format(d.start) + " - " + format(d.end) + ": " + d.label);
             })
         }
 
@@ -227,8 +224,6 @@ const timeline = (domElement, overrideConfig) => {
         data.nTracks = tracks.length;
         data.minDate = d3.min(data.items, function (d) { return d.start; });
         data.maxDate = d3.max(data.items, function (d) { return d.end; });
-
-        console.log(data);
 
         return timeline;
     };
