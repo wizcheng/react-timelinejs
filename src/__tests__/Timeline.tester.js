@@ -1,7 +1,19 @@
 import moment from 'moment';
 import seedrandom from 'seedrandom';
+import * as R from 'ramda';
 
 const random = seedrandom('test-seed');
+
+
+export const mockRange = (data) => {
+    const min = R.reduce(R.min, Number.MAX_VALUE, data.map(d => d.start.getTime()));
+    const max = R.reduce(R.max, 0, data.map(d => d.end.getTime()));
+    const duration = max - min;
+    const from = new Date(min + duration / 4);
+    const to = new Date(min + duration / 4 * 3);
+    console.log('from/to', from, to);
+    return [from, to];
+};
 
 export const mockData = ({size = 10, date = moment('2018-07-14')}) => {
 

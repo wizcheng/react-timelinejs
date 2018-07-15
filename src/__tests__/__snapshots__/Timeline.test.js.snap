@@ -117,3 +117,114 @@ exports[`render with sample data 1`] = `
   <div />
 </Timeline>
 `;
+
+exports[`render without label 1`] = `
+<Timeline
+  data={
+    Array [
+      Object {
+        "end": 2018-07-14T08:36:51.565Z,
+        "instant": false,
+        "label": "event 0",
+        "start": 2018-07-14T08:09:51.565Z,
+        "steps": Array [
+          Object {
+            "className": "custom_1",
+            "end": 2018-07-14T08:17:57.565Z,
+            "endPercentage": 0.3,
+            "label": "sub event 1",
+            "start": 2018-07-14T08:12:33.565Z,
+            "startPercentage": 0.1,
+          },
+          Object {
+            "className": "custom_1",
+            "end": 2018-07-14T08:23:21.565Z,
+            "endPercentage": 0.5,
+            "label": "sub event 2",
+            "start": 2018-07-14T08:20:39.565Z,
+            "startPercentage": 0.4,
+          },
+          Object {
+            "className": "custom_1",
+            "end": 2018-07-14T08:30:06.565Z,
+            "endPercentage": 0.75,
+            "label": "sub event 3",
+            "start": 2018-07-14T08:24:42.565Z,
+            "startPercentage": 0.55,
+          },
+        ],
+        "track": 0,
+      },
+      Object {
+        "end": 2018-07-13T21:32:44.497Z,
+        "instant": false,
+        "label": "event 1",
+        "start": 2018-07-13T20:30:44.497Z,
+        "steps": Array [
+          Object {
+            "className": "custom_1",
+            "end": 2018-07-13T20:49:20.497Z,
+            "endPercentage": 0.3,
+            "label": "sub event 1",
+            "start": 2018-07-13T20:36:56.497Z,
+            "startPercentage": 0.1,
+          },
+          Object {
+            "className": "custom_1",
+            "end": 2018-07-13T21:01:44.497Z,
+            "endPercentage": 0.5,
+            "label": "sub event 2",
+            "start": 2018-07-13T20:55:32.497Z,
+            "startPercentage": 0.4,
+          },
+          Object {
+            "className": "custom_1",
+            "end": 2018-07-13T21:17:14.497Z,
+            "endPercentage": 0.75,
+            "label": "sub event 3",
+            "start": 2018-07-13T21:04:50.497Z,
+            "startPercentage": 0.55,
+          },
+        ],
+        "track": 0,
+      },
+      Object {
+        "end": 2018-07-13T18:19:02.540Z,
+        "instant": false,
+        "label": "event 2",
+        "start": 2018-07-13T16:51:02.540Z,
+        "steps": Array [
+          Object {
+            "className": "custom_1",
+            "end": 2018-07-13T17:17:26.540Z,
+            "endPercentage": 0.3,
+            "label": "sub event 1",
+            "start": 2018-07-13T16:59:50.540Z,
+            "startPercentage": 0.1,
+          },
+          Object {
+            "className": "custom_1",
+            "end": 2018-07-13T17:35:02.540Z,
+            "endPercentage": 0.5,
+            "label": "sub event 2",
+            "start": 2018-07-13T17:26:14.540Z,
+            "startPercentage": 0.4,
+          },
+          Object {
+            "className": "custom_1",
+            "end": 2018-07-13T17:57:02.540Z,
+            "endPercentage": 0.75,
+            "label": "sub event 3",
+            "start": 2018-07-13T17:39:26.540Z,
+            "startPercentage": 0.55,
+          },
+        ],
+        "track": 0,
+      },
+    ]
+  }
+  label={false}
+>
+  <div />
+</Timeline>
+`;
