@@ -15,7 +15,8 @@
     "main": "./dist/Timeline.js",
     "license": "MIT",
     "scripts": {
-        "build": "webpack"
+        "build": "webpack",
+        "postversion": "git push --follow-tags"
     },
     "peerDependencies": {
         "prop-types": "^15.6.2",
