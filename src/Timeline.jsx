@@ -60,6 +60,7 @@ class Timeline extends React.Component {
         this.timelineFn = timeline(this.div, config).create(data);
         this.timelineFn.redraw();
 
+        console.log('data', data);
     };
 
     render() {
