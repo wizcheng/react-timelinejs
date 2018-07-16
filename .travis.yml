@@ -9,6 +9,14 @@ deploy:
   on:
     tags: true
 
+deploy:
+  provider: script
+  script: "npm run deploy-storybook -- --ci --host-token-env-variable=GITHUB_TOKEN"
+  skip-cleanup: true
+  keep-history: true
+  on:
+    branch: master
+
 notifications:
   email:
     recipients:
