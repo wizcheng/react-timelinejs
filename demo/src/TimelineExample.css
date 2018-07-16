@@ -1,3 +1,7 @@
 .custom_1 {
     fill: indianred;
 }
+
+.custom-line {
+    stroke: gray;
+}

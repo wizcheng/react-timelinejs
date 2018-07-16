@@ -8,7 +8,7 @@ const data = () => {
     const today = moment('2018-07-14');
 
     const arr = [];
-    for (let i = 0; i < 1000; i++) {
+    for (let i = 0; i < 100; i++) {
 
         const start = today.clone().add(Math.round(Math.random() * 100) * (10 + Math.random() * 10), 'minutes').add(i * 20, 'minutes');
         const factor = Math.random() < 0.1 ? 1000 : 100;
@@ -47,12 +47,12 @@ const data = () => {
 
 const lines = () => {
 
-    const date = moment('2018-07-25').clone();
+    const date = moment('2018-07-14').hours(0).minutes(0).seconds(0).milliseconds(0).clone();
     const results = [];
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 30; i++) {
         results.push({
-            date: date.clone().add(i, 'days').toDate(),
-            className: 'line 1'
+            date: date.clone().add(i*3, 'hours').toDate(),
+            className: 'custom-line'
         });
     }
     return results;
@@ -66,7 +66,7 @@ export default class TimelineExample extends React.Component {
         this.state = {
             data: data(),
             lines: lines(),
-            domain: [moment('2018-07-25').toDate(), moment('2018-07-27').toDate()]
+            domain: [moment('2018-07-15').toDate(), moment('2018-07-16').toDate()]
         }
     }
 
