@@ -6,3 +6,7 @@ Enzyme.configure({ adapter: new Adapter() });
 global.shallow = shallow;
 global.render = render;
 global.mount = mount;
+
+import diffableHtml from 'diffable-html';
+
+global.html = wrapper => diffableHtml(wrapper.html());

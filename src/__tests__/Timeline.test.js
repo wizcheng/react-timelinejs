@@ -1,25 +1,32 @@
 import React from 'react';
 import Timeline from '../Timeline';
-import {mockData} from './Timeline.tester';
+import {mockData, mockLines} from './Timeline.tester';
 
 test('render empty timeline', () => {
 
-    const timeline = mount(<Timeline data={[]}/>);
-    expect(timeline.html()).toMatchSnapshot();
+    const wrapper = mount(<Timeline data={[]}/>);
+    expect(html(wrapper)).toMatchSnapshot();
 
 });
 
 test('render with sample data', () => {
 
-    const timeline = mount(<Timeline data={mockData({size: 3})}/>);
-    expect(timeline.html()).toMatchSnapshot();
+    const wrapper = mount(<Timeline data={mockData({size: 3})}/>);
+    expect(html(wrapper)).toMatchSnapshot();
+
+});
+
+test('render with lines', () => {
+
+    const wrapper = mount(<Timeline data={mockData({size: 3})} lines={mockLines({size: 10})}/>);
+    expect(html(wrapper)).toMatchSnapshot();
 
 });
 
 test('render without label', () => {
 
-    const timeline = mount(<Timeline data={mockData({size: 3})} label={false}/>);
-    expect(timeline.html()).toMatchSnapshot();
+    const wrapper = mount(<Timeline data={mockData({size: 3})} label={false}/>);
+    expect(html(wrapper)).toMatchSnapshot();
 
 });
 
@@ -27,8 +34,8 @@ test('render without label', () => {
 //
 //     const data = mockData({size: 3});
 //     const range = mockRange(data);
-//     const timeline = mount(<Timeline data={data} range={range}/>);
-//     expect(timeline.html()).toMatchSnapshot();
+//     const wrapper = mount(<Timeline data={data} range={range}/>);
+//     expect(html(wrapper)).toMatchSnapshot();
 //
 // });
 
@@ -36,7 +43,7 @@ test('render without label', () => {
 //
 //     const data = mockData({size: 3});
 //     const range = mockRange(data);
-//     const timeline = mount(<Timeline data={data} brush={true} brushRange={range}/>);
-//     expect(timeline).toMatchSnapshot();
+//     const wrapper = mount(<Timeline data={data} brush={true} brushRange={range}/>);
+//     expect(html(wrapper)).toMatchSnapshot();
 //
 // });

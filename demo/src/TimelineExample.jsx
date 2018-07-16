@@ -10,7 +10,7 @@ const data = () => {
     const arr = [];
     for (let i = 0; i < 1000; i++) {
 
-        const start = today.clone().add(Math.round(Math.random() * 100) * (10 + Math.random() * 10), 'minutes').add(i*20, 'minutes');
+        const start = today.clone().add(Math.round(Math.random() * 100) * (10 + Math.random() * 10), 'minutes').add(i * 20, 'minutes');
         const factor = Math.random() < 0.1 ? 1000 : 100;
         const end = start.clone().add(Math.round(Math.random() * factor + 10), 'minutes');
         const duration = end.toDate().getTime() - start.toDate().getTime();
@@ -43,7 +43,20 @@ const data = () => {
     }
     return arr;
 
-}
+};
+
+const lines = () => {
+
+    const date = moment('2018-07-25').clone();
+    const results = [];
+    for (let i = 0; i < 10; i++) {
+        results.push({
+            date: date.clone().add(i, 'days').toDate(),
+            className: 'line 1'
+        });
+    }
+    return results;
+};
 
 export default class TimelineExample extends React.Component {
 
@@ -52,6 +65,7 @@ export default class TimelineExample extends React.Component {
         super(props);
         this.state = {
             data: data(),
+            lines: lines(),
             domain: [moment('2018-07-25').toDate(), moment('2018-07-27').toDate()]
         }
     }
@@ -65,14 +79,17 @@ export default class TimelineExample extends React.Component {
         return (
             <div>
                 <Timeline data={this.state.data}
+                          lines={this.state.lines}
                           width={700} height={400}
                           range={this.state.domain}
-                            onMouseover={val => console.log(val)}/>
+                          onMouseover={val => console.log(val)}/>
 
-                <Timeline data={this.state.data} width={700} height={100}
+                <Timeline data={this.state.data}
+                          lines={this.state.lines}
+                          width={700} height={100}
                           label={false} tooltips={false}
                           brush={true} onBrush={this.handleBrush} brushRange={this.state.domain}/>
             </div>
-        )
+        );
     }
 }

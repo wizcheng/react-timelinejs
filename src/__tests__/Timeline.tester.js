@@ -15,6 +15,20 @@ export const mockRange = (data) => {
     return [from, to];
 };
 
+
+export const mockLines = ({size = 10, date = moment('2018-07-14')}) => {
+    const today = date.clone().hours(0).minutes(0).seconds(0).milliseconds(0);
+    const results = [];
+    for (let i = 0; i < size; i++) {
+        results.push({
+            date: today.clone().add(i, 'hours'),
+            className: 'test'
+        });
+    }
+    return results;
+};
+
+
 export const mockData = ({size = 10, date = moment('2018-07-14')}) => {
 
     const today = date.clone().hours(0).minutes(0).seconds(0).milliseconds(0);

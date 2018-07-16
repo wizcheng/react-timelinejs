@@ -99,6 +99,11 @@ const timeline = (domElement, overrideConfig) => {
     // data
     //
 
+    timeline.lines = function (lines) {
+        data.lines = lines ? lines : [];
+        return timeline;
+    };
+
     timeline.data = function(items) {
 
         var today = new Date(),
@@ -269,6 +274,15 @@ const timeline = (domElement, overrideConfig) => {
             .attr("width", band.w)
             .attr("height", band.h);
 
+        const lines = band.g.selectAll('line.path')
+            .data(data.lines)
+            .enter().append('path')
+            .attr('d', d => {
+                const x = band.xScale(d.date);
+                return `M${x} 0 L${x} ${band.h}`
+            })
+            .attr('class', d => `line ${d.className}`);
+
         const mouseoverLine = band.g.append('path')
             .attr('d', `M0 0 L0 ${band.h}`)
             .attr('class', 'mouseover-line')
@@ -333,6 +347,13 @@ const timeline = (domElement, overrideConfig) => {
                 .attr("x", function (d) { return band.xScale(d.start);})
                 .attr("width", function (d) {
                     return band.xScale(d.end) - band.xScale(d.start); });
+
+            lines
+                .attr('d', d => {
+                    const x = band.xScale(d.date);
+                    return `M${x} 0 L${x} ${band.h}`
+                });
+
             band.parts.forEach(function(part) { part.redraw(); })
 
             // mouseoverLine
@@ -633,9 +654,10 @@ const timeline = (domElement, overrideConfig) => {
 
     };
 
-    timeline.create = (data) => {
+    timeline.create = (data, lines) => {
         timeline
             .data(data)
+            .lines(lines)
             .band("mainBand")
             // .band("naviBand", 0.08)
             .xAxis("mainBand");

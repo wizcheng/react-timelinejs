@@ -45,7 +45,7 @@ class Timeline extends React.Component {
 
     createTimeline = () => {
 
-        const {data, height, width, label, tooltips, brush, brushRange, onBrush, onMouseover, range} = this.props;
+        const {data, lines, height, width, label, tooltips, brush, brushRange, onBrush, onMouseover, range} = this.props;
         const config = {
             width,
             height,
@@ -57,10 +57,8 @@ class Timeline extends React.Component {
             onBrush,
             onMouseover
         };
-        this.timelineFn = timeline(this.div, config).create(data);
+        this.timelineFn = timeline(this.div, config).create(data, lines);
         this.timelineFn.redraw();
-
-        console.log('data', data);
     };
 
     render() {
