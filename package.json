@@ -39,7 +39,7 @@
     "gitUsername": "wizcheng",
     "gitEmail": "wizcheng@gmail.com",
     "commitMessage": "Deploy Storybook"
-  }
+  },
   "peerDependencies": {
     "prop-types": "^15.6.2",
     "react": "^16.4.1",
