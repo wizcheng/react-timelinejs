@@ -1,68 +1,76 @@
 {
-    "name": "react-timelinejs",
-    "version": "0.1.6",
-    "description": "React Timeline",
-    "homepage": "https://github.com/wizcheng/react-timelinejs/tree/master/demo",
-    "keywords": [
-        "react",
-        "timeline",
-        "d3js"
+  "name": "react-timelinejs",
+  "version": "0.1.6",
+  "description": "React Timeline",
+  "homepage": "https://github.com/wizcheng/react-timelinejs/tree/master/demo",
+  "keywords": [
+    "react",
+    "timeline",
+    "d3js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wizcheng/react-timelinejs"
+  },
+  "main": "./dist/Timeline.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack",
+    "test": "jest",
+    "postversion": "git push --follow-tags",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "jest": {
+    "setupFiles": [
+      "./jest.setup.js"
     ],
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/wizcheng/react-timelinejs"
+    "testRegex": "(/__tests__/.test.*|(\\.|/)(test))\\.jsx?$",
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|less|scss|sass)$": "identity-obj-proxy"
     },
-    "main": "./dist/Timeline.js",
-    "license": "MIT",
-    "scripts": {
-        "build": "webpack",
-        "test": "jest",
-        "postversion": "git push --follow-tags"
-    },
-    "jest": {
-        "setupFiles": [
-            "./jest.setup.js"
-        ],
-        "testRegex": "(/__tests__/.test.*|(\\.|/)(test))\\.jsx?$",
-        "moduleNameMapper": {
-            "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
-            "\\.(css|less|scss|sass)$": "identity-obj-proxy"
-        },
-        "snapshotSerializers": [
-            "enzyme-to-json/serializer"
-        ]
-    },
-    "peerDependencies": {
-        "prop-types": "^15.6.2",
-        "react": "^16.4.1",
-        "react-dom": "^16.4.1"
-    },
-    "devDependencies": {
-        "babel-core": "^6.26.3",
-        "babel-jest": "^23.4.0",
-        "babel-loader": "^7.1.5",
-        "babel-preset-env": "^1.7.0",
-        "babel-preset-react": "^6.24.1",
-        "babel-preset-stage-2": "^6.24.1",
-        "css-loader": "^1.0.0",
-        "d3": "^5.5.0",
-        "diffable-html": "^3.0.0",
-        "enzyme": "^3.3.0",
-        "enzyme-adapter-react-16": "^1.1.1",
-        "enzyme-to-json": "^3.3.4",
-        "identity-obj-proxy": "^3.0.0",
-        "jest": "^23.4.1",
-        "moment": "^2.22.2",
-        "path": "^0.12.7",
-        "prop-types": "^15.6.2",
-        "ramda": "^0.25.0",
-        "react": "^16.4.1",
-        "react-dom": "^16.4.1",
-        "react-test-renderer": "^16.4.1",
-        "regenerator-runtime": "^0.12.0",
-        "seedrandom": "^2.4.3",
-        "style-loader": "^0.21.0",
-        "webpack": "^4.16.0",
-        "webpack-cli": "^3.0.8"
-    }
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
+  },
+  "peerDependencies": {
+    "prop-types": "^15.6.2",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-jest": "^23.4.0",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "css-loader": "^1.0.0",
+    "d3": "^5.5.0",
+    "diffable-html": "^3.0.0",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme-to-json": "^3.3.4",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^23.4.1",
+    "moment": "^2.22.2",
+    "path": "^0.12.7",
+    "prop-types": "^15.6.2",
+    "ramda": "^0.25.0",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-test-renderer": "^16.4.1",
+    "regenerator-runtime": "^0.12.0",
+    "seedrandom": "^2.4.3",
+    "style-loader": "^0.21.0",
+    "webpack": "^4.16.0",
+    "webpack-cli": "^3.0.8",
+    "@storybook/react": "^3.4.8",
+    "@storybook/addon-actions": "^3.4.8",
+    "@storybook/addon-links": "^3.4.8",
+    "@storybook/addons": "^3.4.8",
+    "babel-runtime": "^6.26.0"
+  },
+  "dependencies": {}
 }
