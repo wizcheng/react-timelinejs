@@ -32,7 +32,7 @@ exports[`render with brush 1`] = `
           >
           </path>
           <svg y=\\"4\\"
-               height=\\"16\\"
+               height=\\"19\\"
                class=\\"part interval\\"
                x=\\"660.7030050328602\\"
                width=\\"39.29699496713977\\"
@@ -45,21 +45,21 @@ exports[`render with brush 1`] = `
                   x=\\"10%\\"
                   y=\\"0\\"
                   width=\\"20%\\"
-                  height=\\"16\\"
+                  height=\\"19\\"
             >
             </rect>
             <rect class=\\"step custom_1\\"
                   x=\\"40%\\"
                   y=\\"0\\"
                   width=\\"9.999999999999998%\\"
-                  height=\\"16\\"
+                  height=\\"19\\"
             >
             </rect>
             <rect class=\\"step custom_1\\"
                   x=\\"55.00000000000001%\\"
                   y=\\"0\\"
                   width=\\"19.999999999999996%\\"
-                  height=\\"16\\"
+                  height=\\"19\\"
             >
             </rect>
             <text class=\\"intervalLabel\\"
@@ -70,7 +70,7 @@ exports[`render with brush 1`] = `
             </text>
           </svg>
           <svg y=\\"4\\"
-               height=\\"16\\"
+               height=\\"19\\"
                class=\\"part interval\\"
                x=\\"45.06531589189063\\"
                width=\\"24.427861736330136\\"
@@ -83,21 +83,21 @@ exports[`render with brush 1`] = `
                   x=\\"10%\\"
                   y=\\"0\\"
                   width=\\"20%\\"
-                  height=\\"16\\"
+                  height=\\"19\\"
             >
             </rect>
             <rect class=\\"step custom_1\\"
                   x=\\"40%\\"
                   y=\\"0\\"
                   width=\\"9.999999999999998%\\"
-                  height=\\"16\\"
+                  height=\\"19\\"
             >
             </rect>
             <rect class=\\"step custom_1\\"
                   x=\\"55.00000000000001%\\"
                   y=\\"0\\"
                   width=\\"19.999999999999996%\\"
-                  height=\\"16\\"
+                  height=\\"19\\"
             >
             </rect>
             <text class=\\"intervalLabel\\"
@@ -108,7 +108,7 @@ exports[`render with brush 1`] = `
             </text>
           </svg>
           <svg y=\\"4\\"
-               height=\\"16\\"
+               height=\\"19\\"
                class=\\"part interval\\"
                x=\\"0\\"
                width=\\"18.586416538512058\\"
@@ -121,21 +121,21 @@ exports[`render with brush 1`] = `
                   x=\\"10%\\"
                   y=\\"0\\"
                   width=\\"20%\\"
-                  height=\\"16\\"
+                  height=\\"19\\"
             >
             </rect>
             <rect class=\\"step custom_1\\"
                   x=\\"40%\\"
                   y=\\"0\\"
                   width=\\"9.999999999999998%\\"
-                  height=\\"16\\"
+                  height=\\"19\\"
             >
             </rect>
             <rect class=\\"step custom_1\\"
                   x=\\"55.00000000000001%\\"
                   y=\\"0\\"
                   width=\\"19.999999999999996%\\"
-                  height=\\"16\\"
+                  height=\\"19\\"
             >
             </rect>
             <text class=\\"intervalLabel\\"
@@ -328,7 +328,8 @@ exports[`render with brush 1`] = `
     </g>
   </svg>
   <div class=\\"tooltip\\"
-       style=\\"visibility: visible;\\"
+       id=\\"tooltip\\"
+       style=\\"visibility: hidden;\\"
   >
   </div>
 </div>

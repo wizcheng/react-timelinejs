@@ -35,6 +35,16 @@ class Timeline extends React.Component {
     }
 
     componentWillReceiveProps(nextProps, nextState) {
+        if (!R.equals(nextProps.data, this.props.data)
+                || !R.equals(nextProps.lines, this.props.lines)) {
+            this.timelineFn
+                .data(nextProps.data)
+                .lines(nextProps.lines)
+                .update()
+                .updateRange(nextProps.range)
+                .updateBrushRange(nextProps.brushRange)
+                .redraw();
+        }
         if (!R.equals(nextProps.range, this.props.range)){
             this.timelineFn.updateRange(nextProps.range);
         }
@@ -45,17 +55,20 @@ class Timeline extends React.Component {
 
     createTimeline = () => {
 
-        const {data, lines, height, width, label, tooltips, brush, brushRange, onBrush, onMouseover, range} = this.props;
+        const {data, lines, height, width, trackHeight, label, tooltips, tooltipContent, brush, brushRange, onBrush, onMouseover, onClick, range} = this.props;
         const config = {
             width,
             height,
+            trackHeight,
             label,
             tooltips,
+            tooltipContent,
             brush,
             brushRange,
             range,
             onBrush,
-            onMouseover
+            onMouseover,
+            onClick
         };
         this.timelineFn = timeline(this.div, config).create(data, lines);
         this.timelineFn.redraw();

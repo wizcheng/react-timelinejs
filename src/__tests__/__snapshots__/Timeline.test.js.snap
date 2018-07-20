@@ -49,7 +49,8 @@ exports[`render empty timeline 1`] = `
     </g>
   </svg>
   <div class=\\"tooltip\\"
-       style=\\"visibility: visible;\\"
+       id=\\"tooltip\\"
+       style=\\"visibility: hidden;\\"
   >
   </div>
 </div>
@@ -82,44 +83,44 @@ exports[`render with lines 1`] = `
                 height=\\"380\\"
           >
           </rect>
-          <path d=\\"M-37.77647281164742 0 L-37.77647281164742 380\\"
-                class=\\"line test\\"
+          <path class=\\"line test\\"
+                d=\\"M-37.77647281164742 0 L-37.77647281164742 380\\"
           >
           </path>
-          <path d=\\"M6.629576455278307 0 L6.629576455278307 380\\"
-                class=\\"line test\\"
+          <path class=\\"line test\\"
+                d=\\"M6.629576455278307 0 L6.629576455278307 380\\"
           >
           </path>
-          <path d=\\"M51.03562572220404 0 L51.03562572220404 380\\"
-                class=\\"line test\\"
+          <path class=\\"line test\\"
+                d=\\"M51.03562572220404 0 L51.03562572220404 380\\"
           >
           </path>
-          <path d=\\"M95.44167498912977 0 L95.44167498912977 380\\"
-                class=\\"line test\\"
+          <path class=\\"line test\\"
+                d=\\"M95.44167498912977 0 L95.44167498912977 380\\"
           >
           </path>
-          <path d=\\"M139.8477242560555 0 L139.8477242560555 380\\"
-                class=\\"line test\\"
+          <path class=\\"line test\\"
+                d=\\"M139.8477242560555 0 L139.8477242560555 380\\"
           >
           </path>
-          <path d=\\"M184.25377352298125 0 L184.25377352298125 380\\"
-                class=\\"line test\\"
+          <path class=\\"line test\\"
+                d=\\"M184.25377352298125 0 L184.25377352298125 380\\"
           >
           </path>
-          <path d=\\"M228.65982278990697 0 L228.65982278990697 380\\"
-                class=\\"line test\\"
+          <path class=\\"line test\\"
+                d=\\"M228.65982278990697 0 L228.65982278990697 380\\"
           >
           </path>
-          <path d=\\"M273.0658720568327 0 L273.0658720568327 380\\"
-                class=\\"line test\\"
+          <path class=\\"line test\\"
+                d=\\"M273.0658720568327 0 L273.0658720568327 380\\"
           >
           </path>
-          <path d=\\"M317.4719213237584 0 L317.4719213237584 380\\"
-                class=\\"line test\\"
+          <path class=\\"line test\\"
+                d=\\"M317.4719213237584 0 L317.4719213237584 380\\"
           >
           </path>
-          <path d=\\"M361.87797059068413 0 L361.87797059068413 380\\"
-                class=\\"line test\\"
+          <path class=\\"line test\\"
+                d=\\"M361.87797059068413 0 L361.87797059068413 380\\"
           >
           </path>
           <path d=\\"M0 0 L0 380\\"
@@ -128,7 +129,7 @@ exports[`render with lines 1`] = `
           >
           </path>
           <svg y=\\"4\\"
-               height=\\"16\\"
+               height=\\"19\\"
                class=\\"part interval\\"
                x=\\"680.0172778298834\\"
                width=\\"19.98272217011663\\"
@@ -141,21 +142,21 @@ exports[`render with lines 1`] = `
                   x=\\"10%\\"
                   y=\\"0\\"
                   width=\\"20%\\"
-                  height=\\"16\\"
+                  height=\\"19\\"
             >
             </rect>
             <rect class=\\"step custom_1\\"
                   x=\\"40%\\"
                   y=\\"0\\"
                   width=\\"9.999999999999998%\\"
-                  height=\\"16\\"
+                  height=\\"19\\"
             >
             </rect>
             <rect class=\\"step custom_1\\"
                   x=\\"55.00000000000001%\\"
                   y=\\"0\\"
                   width=\\"19.999999999999996%\\"
-                  height=\\"16\\"
+                  height=\\"19\\"
             >
             </rect>
             <text class=\\"intervalLabel\\"
@@ -166,7 +167,7 @@ exports[`render with lines 1`] = `
             </text>
           </svg>
           <svg y=\\"4\\"
-               height=\\"16\\"
+               height=\\"19\\"
                class=\\"part interval\\"
                x=\\"162.59961999347126\\"
                width=\\"45.88625090915659\\"
@@ -179,21 +180,21 @@ exports[`render with lines 1`] = `
                   x=\\"10%\\"
                   y=\\"0\\"
                   width=\\"20%\\"
-                  height=\\"16\\"
+                  height=\\"19\\"
             >
             </rect>
             <rect class=\\"step custom_1\\"
                   x=\\"40%\\"
                   y=\\"0\\"
                   width=\\"9.999999999999998%\\"
-                  height=\\"16\\"
+                  height=\\"19\\"
             >
             </rect>
             <rect class=\\"step custom_1\\"
                   x=\\"55.00000000000001%\\"
                   y=\\"0\\"
                   width=\\"19.999999999999996%\\"
-                  height=\\"16\\"
+                  height=\\"19\\"
             >
             </rect>
             <text class=\\"intervalLabel\\"
@@ -204,7 +205,7 @@ exports[`render with lines 1`] = `
             </text>
           </svg>
           <svg y=\\"4\\"
-               height=\\"16\\"
+               height=\\"19\\"
                class=\\"part interval\\"
                x=\\"0\\"
                width=\\"65.12887225815774\\"
@@ -217,21 +218,21 @@ exports[`render with lines 1`] = `
                   x=\\"10%\\"
                   y=\\"0\\"
                   width=\\"20%\\"
-                  height=\\"16\\"
+                  height=\\"19\\"
             >
             </rect>
             <rect class=\\"step custom_1\\"
                   x=\\"40%\\"
                   y=\\"0\\"
                   width=\\"9.999999999999998%\\"
-                  height=\\"16\\"
+                  height=\\"19\\"
             >
             </rect>
             <rect class=\\"step custom_1\\"
                   x=\\"55.00000000000001%\\"
                   y=\\"0\\"
                   width=\\"19.999999999999996%\\"
-                  height=\\"16\\"
+                  height=\\"19\\"
             >
             </rect>
             <text class=\\"intervalLabel\\"
@@ -499,7 +500,8 @@ exports[`render with lines 1`] = `
     </g>
   </svg>
   <div class=\\"tooltip\\"
-       style=\\"visibility: visible;\\"
+       id=\\"tooltip\\"
+       style=\\"visibility: hidden;\\"
   >
   </div>
 </div>
@@ -538,7 +540,7 @@ exports[`render with sample data 1`] = `
           >
           </path>
           <svg y=\\"4\\"
-               height=\\"16\\"
+               height=\\"19\\"
                class=\\"part interval\\"
                x=\\"660.7030050328602\\"
                width=\\"39.29699496713977\\"
@@ -551,21 +553,21 @@ exports[`render with sample data 1`] = `
                   x=\\"10%\\"
                   y=\\"0\\"
                   width=\\"20%\\"
-                  height=\\"16\\"
+                  height=\\"19\\"
             >
             </rect>
             <rect class=\\"step custom_1\\"
                   x=\\"40%\\"
                   y=\\"0\\"
                   width=\\"9.999999999999998%\\"
-                  height=\\"16\\"
+                  height=\\"19\\"
             >
             </rect>
             <rect class=\\"step custom_1\\"
                   x=\\"55.00000000000001%\\"
                   y=\\"0\\"
                   width=\\"19.999999999999996%\\"
-                  height=\\"16\\"
+                  height=\\"19\\"
             >
             </rect>
             <text class=\\"intervalLabel\\"
@@ -576,7 +578,7 @@ exports[`render with sample data 1`] = `
             </text>
           </svg>
           <svg y=\\"4\\"
-               height=\\"16\\"
+               height=\\"19\\"
                class=\\"part interval\\"
                x=\\"45.06531589189063\\"
                width=\\"24.427861736330136\\"
@@ -589,21 +591,21 @@ exports[`render with sample data 1`] = `
                   x=\\"10%\\"
                   y=\\"0\\"
                   width=\\"20%\\"
-                  height=\\"16\\"
+                  height=\\"19\\"
             >
             </rect>
             <rect class=\\"step custom_1\\"
                   x=\\"40%\\"
                   y=\\"0\\"
                   width=\\"9.999999999999998%\\"
-                  height=\\"16\\"
+                  height=\\"19\\"
             >
             </rect>
             <rect class=\\"step custom_1\\"
                   x=\\"55.00000000000001%\\"
                   y=\\"0\\"
                   width=\\"19.999999999999996%\\"
-                  height=\\"16\\"
+                  height=\\"19\\"
             >
             </rect>
             <text class=\\"intervalLabel\\"
@@ -614,7 +616,7 @@ exports[`render with sample data 1`] = `
             </text>
           </svg>
           <svg y=\\"4\\"
-               height=\\"16\\"
+               height=\\"19\\"
                class=\\"part interval\\"
                x=\\"0\\"
                width=\\"18.586416538512058\\"
@@ -627,21 +629,21 @@ exports[`render with sample data 1`] = `
                   x=\\"10%\\"
                   y=\\"0\\"
                   width=\\"20%\\"
-                  height=\\"16\\"
+                  height=\\"19\\"
             >
             </rect>
             <rect class=\\"step custom_1\\"
                   x=\\"40%\\"
                   y=\\"0\\"
                   width=\\"9.999999999999998%\\"
-                  height=\\"16\\"
+                  height=\\"19\\"
             >
             </rect>
             <rect class=\\"step custom_1\\"
                   x=\\"55.00000000000001%\\"
                   y=\\"0\\"
                   width=\\"19.999999999999996%\\"
-                  height=\\"16\\"
+                  height=\\"19\\"
             >
             </rect>
             <text class=\\"intervalLabel\\"
@@ -789,7 +791,8 @@ exports[`render with sample data 1`] = `
     </g>
   </svg>
   <div class=\\"tooltip\\"
-       style=\\"visibility: visible;\\"
+       id=\\"tooltip\\"
+       style=\\"visibility: hidden;\\"
   >
   </div>
 </div>
@@ -828,7 +831,7 @@ exports[`render without label 1`] = `
           >
           </path>
           <svg y=\\"4\\"
-               height=\\"16\\"
+               height=\\"19\\"
                class=\\"part interval\\"
                x=\\"670.8612476227844\\"
                width=\\"17.63048453056433\\"
@@ -841,26 +844,26 @@ exports[`render without label 1`] = `
                   x=\\"10%\\"
                   y=\\"0\\"
                   width=\\"20%\\"
-                  height=\\"16\\"
+                  height=\\"19\\"
             >
             </rect>
             <rect class=\\"step custom_1\\"
                   x=\\"40%\\"
                   y=\\"0\\"
                   width=\\"9.999999999999998%\\"
-                  height=\\"16\\"
+                  height=\\"19\\"
             >
             </rect>
             <rect class=\\"step custom_1\\"
                   x=\\"55.00000000000001%\\"
                   y=\\"0\\"
                   width=\\"19.999999999999996%\\"
-                  height=\\"16\\"
+                  height=\\"19\\"
             >
             </rect>
           </svg>
           <svg y=\\"24\\"
-               height=\\"16\\"
+               height=\\"19\\"
                class=\\"part interval\\"
                x=\\"617.4150987778827\\"
                width=\\"82.58490122211731\\"
@@ -873,26 +876,26 @@ exports[`render without label 1`] = `
                   x=\\"10%\\"
                   y=\\"0\\"
                   width=\\"20%\\"
-                  height=\\"16\\"
+                  height=\\"19\\"
             >
             </rect>
             <rect class=\\"step custom_1\\"
                   x=\\"40%\\"
                   y=\\"0\\"
                   width=\\"9.999999999999998%\\"
-                  height=\\"16\\"
+                  height=\\"19\\"
             >
             </rect>
             <rect class=\\"step custom_1\\"
                   x=\\"55.00000000000001%\\"
                   y=\\"0\\"
                   width=\\"19.999999999999996%\\"
-                  height=\\"16\\"
+                  height=\\"19\\"
             >
             </rect>
           </svg>
           <svg y=\\"4\\"
-               height=\\"16\\"
+               height=\\"19\\"
                class=\\"part interval\\"
                x=\\"0\\"
                width=\\"64.95441669155298\\"
@@ -905,21 +908,21 @@ exports[`render without label 1`] = `
                   x=\\"10%\\"
                   y=\\"0\\"
                   width=\\"20%\\"
-                  height=\\"16\\"
+                  height=\\"19\\"
             >
             </rect>
             <rect class=\\"step custom_1\\"
                   x=\\"40%\\"
                   y=\\"0\\"
                   width=\\"9.999999999999998%\\"
-                  height=\\"16\\"
+                  height=\\"19\\"
             >
             </rect>
             <rect class=\\"step custom_1\\"
                   x=\\"55.00000000000001%\\"
                   y=\\"0\\"
                   width=\\"19.999999999999996%\\"
-                  height=\\"16\\"
+                  height=\\"19\\"
             >
             </rect>
           </svg>
@@ -1121,7 +1124,8 @@ exports[`render without label 1`] = `
     </g>
   </svg>
   <div class=\\"tooltip\\"
-       style=\\"visibility: visible;\\"
+       id=\\"tooltip\\"
+       style=\\"visibility: hidden;\\"
   >
   </div>
 </div>

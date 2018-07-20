@@ -26,44 +26,44 @@ exports[`render with range 1`] = `
                 height=\\"380\\"
           >
           </rect>
-          <path d=\\"M-878.6692595940302 0 L-878.6692595940302 380\\"
-                class=\\"line test\\"
+          <path class=\\"line test\\"
+                d=\\"M-878.6692595940302 0 L-878.6692595940302 380\\"
           >
           </path>
-          <path d=\\"M-814.9444020848346 0 L-814.9444020848346 380\\"
-                class=\\"line test\\"
+          <path class=\\"line test\\"
+                d=\\"M-814.9444020848346 0 L-814.9444020848346 380\\"
           >
           </path>
-          <path d=\\"M-751.2195445756389 0 L-751.2195445756389 380\\"
-                class=\\"line test\\"
+          <path class=\\"line test\\"
+                d=\\"M-751.2195445756389 0 L-751.2195445756389 380\\"
           >
           </path>
-          <path d=\\"M-687.4946870664434 0 L-687.4946870664434 380\\"
-                class=\\"line test\\"
+          <path class=\\"line test\\"
+                d=\\"M-687.4946870664434 0 L-687.4946870664434 380\\"
           >
           </path>
-          <path d=\\"M-623.7698295572478 0 L-623.7698295572478 380\\"
-                class=\\"line test\\"
+          <path class=\\"line test\\"
+                d=\\"M-623.7698295572478 0 L-623.7698295572478 380\\"
           >
           </path>
-          <path d=\\"M-560.0449720480522 0 L-560.0449720480522 380\\"
-                class=\\"line test\\"
+          <path class=\\"line test\\"
+                d=\\"M-560.0449720480522 0 L-560.0449720480522 380\\"
           >
           </path>
-          <path d=\\"M-496.3201145388566 0 L-496.3201145388566 380\\"
-                class=\\"line test\\"
+          <path class=\\"line test\\"
+                d=\\"M-496.3201145388566 0 L-496.3201145388566 380\\"
           >
           </path>
-          <path d=\\"M-432.59525702966096 0 L-432.59525702966096 380\\"
-                class=\\"line test\\"
+          <path class=\\"line test\\"
+                d=\\"M-432.59525702966096 0 L-432.59525702966096 380\\"
           >
           </path>
-          <path d=\\"M-368.87039952046536 0 L-368.87039952046536 380\\"
-                class=\\"line test\\"
+          <path class=\\"line test\\"
+                d=\\"M-368.87039952046536 0 L-368.87039952046536 380\\"
           >
           </path>
-          <path d=\\"M-305.1455420112698 0 L-305.1455420112698 380\\"
-                class=\\"line test\\"
+          <path class=\\"line test\\"
+                d=\\"M-305.1455420112698 0 L-305.1455420112698 380\\"
           >
           </path>
           <path d=\\"M0 0 L0 380\\"
@@ -72,7 +72,7 @@ exports[`render with range 1`] = `
           >
           </path>
           <svg y=\\"4\\"
-               height=\\"16\\"
+               height=\\"19\\"
                class=\\"part interval\\"
                x=\\"971.4060267733414\\"
                width=\\"78.59399092800777\\"
@@ -85,21 +85,21 @@ exports[`render with range 1`] = `
                   x=\\"10%\\"
                   y=\\"0\\"
                   width=\\"20%\\"
-                  height=\\"16\\"
+                  height=\\"19\\"
             >
             </rect>
             <rect class=\\"step custom_1\\"
                   x=\\"40%\\"
                   y=\\"0\\"
                   width=\\"9.999999999999998%\\"
-                  height=\\"16\\"
+                  height=\\"19\\"
             >
             </rect>
             <rect class=\\"step custom_1\\"
                   x=\\"55.00000000000001%\\"
                   y=\\"0\\"
                   width=\\"19.999999999999996%\\"
-                  height=\\"16\\"
+                  height=\\"19\\"
             >
             </rect>
             <text class=\\"intervalLabel\\"
@@ -110,7 +110,7 @@ exports[`render with range 1`] = `
             </text>
           </svg>
           <svg y=\\"4\\"
-               height=\\"16\\"
+               height=\\"19\\"
                class=\\"part interval\\"
                x=\\"-259.8693670766232\\"
                width=\\"48.85572409038329\\"
@@ -123,21 +123,21 @@ exports[`render with range 1`] = `
                   x=\\"10%\\"
                   y=\\"0\\"
                   width=\\"20%\\"
-                  height=\\"16\\"
+                  height=\\"19\\"
             >
             </rect>
             <rect class=\\"step custom_1\\"
                   x=\\"40%\\"
                   y=\\"0\\"
                   width=\\"9.999999999999998%\\"
-                  height=\\"16\\"
+                  height=\\"19\\"
             >
             </rect>
             <rect class=\\"step custom_1\\"
                   x=\\"55.00000000000001%\\"
                   y=\\"0\\"
                   width=\\"19.999999999999996%\\"
-                  height=\\"16\\"
+                  height=\\"19\\"
             >
             </rect>
             <text class=\\"intervalLabel\\"
@@ -148,7 +148,7 @@ exports[`render with range 1`] = `
             </text>
           </svg>
           <svg y=\\"4\\"
-               height=\\"16\\"
+               height=\\"19\\"
                class=\\"part interval\\"
                x=\\"-350\\"
                width=\\"37.172833547030734\\"
@@ -161,21 +161,21 @@ exports[`render with range 1`] = `
                   x=\\"10%\\"
                   y=\\"0\\"
                   width=\\"20%\\"
-                  height=\\"16\\"
+                  height=\\"19\\"
             >
             </rect>
             <rect class=\\"step custom_1\\"
                   x=\\"40%\\"
                   y=\\"0\\"
                   width=\\"9.999999999999998%\\"
-                  height=\\"16\\"
+                  height=\\"19\\"
             >
             </rect>
             <rect class=\\"step custom_1\\"
                   x=\\"55.00000000000001%\\"
                   y=\\"0\\"
                   width=\\"19.999999999999996%\\"
-                  height=\\"16\\"
+                  height=\\"19\\"
             >
             </rect>
             <text class=\\"intervalLabel\\"
@@ -368,7 +368,8 @@ exports[`render with range 1`] = `
     </g>
   </svg>
   <div class=\\"tooltip\\"
-       style=\\"visibility: visible;\\"
+       id=\\"tooltip\\"
+       style=\\"visibility: hidden;\\"
   >
   </div>
 </div>

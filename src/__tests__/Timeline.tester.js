@@ -16,12 +16,12 @@ export const mockRange = (data) => {
 };
 
 
-export const mockLines = ({size = 10, date = moment('2018-07-14')}) => {
+export const mockLines = ({size = 10, date = moment('2018-07-14'), interval = 1}) => {
     const today = date.clone().hours(0).minutes(0).seconds(0).milliseconds(0);
     const results = [];
     for (let i = 0; i < size; i++) {
         results.push({
-            date: today.clone().add(i, 'hours'),
+            date: today.clone().add(i*interval, 'hours'),
             className: 'test'
         });
     }

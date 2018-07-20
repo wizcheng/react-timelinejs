@@ -13,6 +13,35 @@ const defaultNoOps = fn => {
     }, fn);
 };
 
+Element.prototype.remove = function () {
+    this.parentElement.removeChild(this);
+};
+
+NodeList.prototype.remove = HTMLCollection.prototype.remove = function () {
+    for (var i = this.length - 1; i >= 0; i--) {
+        if (this[i] && this[i].parentElement) {
+            this[i].parentElement.removeChild(this[i]);
+        }
+    }
+};
+
+
+function format(date) {
+    return date.toString();
+    // // bcString is the prefix or postfix for BC dates.
+    // // If bcString starts with '-' (minus),
+    // // if will be placed in front of the year.
+    // bcString = bcString || " BC" // With blank!
+    // var year = date.getUTCFullYear();
+    // if (year > 0) return year.toString();
+    // if (bcString[0] == '-') return bcString + (-year);
+    // return (-year) + bcString;
+}
+
+function getHtml(d, element) {
+    return d.label + "<br>" + format(d.start) + " - " + format(d.end);
+}
+
 const timeline = (domElement, overrideConfig) => {
 
     //--------------------------------------------------------------------------
@@ -29,13 +58,16 @@ const timeline = (domElement, overrideConfig) => {
     const config = {
         width: defaultTo(700, overrideConfig.width),
         height: defaultTo(400, overrideConfig.height),
+        trackHeight: defaultTo(20, overrideConfig.trackHeight),
         label: defaultTo(true, overrideConfig.label),
         tooltips: defaultTo(true, overrideConfig.tooltips),
         brush: defaultTo(false, overrideConfig.brush),
         brushRange: defaultTo(false, overrideConfig.brushRange),
         range: defaultTo(false, overrideConfig.range),
         onBrush: defaultNoOps(overrideConfig.onBrush),
-        onMouseover: defaultNoOps(overrideConfig.onMouseover)
+        onMouseover: defaultNoOps(overrideConfig.onMouseover),
+        onClick: defaultNoOps(overrideConfig.onClick),
+        tooltipContent: R.defaultTo(getHtml, overrideConfig.tooltipContent)
     };
 
     // chart geometry
@@ -52,12 +84,15 @@ const timeline = (domElement, overrideConfig) => {
         bandGap = 25,    // Arbitray gap between to consecutive bands
         bands = {},      // Registry for all the bands in the timeline
         bandY = 0,       // Y-Position of the next band
-        bandNum = 0;     // Count of bands for ids
+        bandNum = 0,
+        // id = `${new Date().getTime()}-${Math.random() * 100000}`,
+        tooltipId = `tooltip`
+    ;     // Count of bands for ids
 
     // Create svg element
     var svg = d3.select(domElement).append("svg")
         .attr("class", "svg")
-        .attr("id", "svg")
+        .attr("id", 'svg')
         .attr("width", outerWidth)
         .attr("height", outerHeight)
         .append("g")
@@ -89,10 +124,12 @@ const timeline = (domElement, overrideConfig) => {
         .attr("class", "chart")
         .attr("clip-path", "url(#chart-area)" );
 
-    var tooltip = d3.select(domElement)
+    const tooltip = d3.select(domElement)
         .append("div")
         .attr("class", "tooltip")
-        .style("visibility", "visible");
+        .attr('id', tooltipId)
+        .style("visibility", "hidden");
+
 
     //--------------------------------------------------------------------------
     //
@@ -238,6 +275,12 @@ const timeline = (domElement, overrideConfig) => {
     // band
     //
 
+    timeline.update = function () {
+        const band = bands['mainBand'];
+        band.update();
+        return timeline;
+    };
+
     timeline.band = function (bandName) {
 
         var band = {};
@@ -245,21 +288,29 @@ const timeline = (domElement, overrideConfig) => {
         band.x = 0;
         band.y = bandY;
         band.w = width;
-        band.h = height - 20;
+        band.h = height - config.trackHeight;
         band.trackOffset = 4;
         // Prevent tracks from getting too high
-        band.trackHeight = Math.min((band.h - band.trackOffset) / data.nTracks, 20);
-        band.itemHeight = band.trackHeight * 0.8,
-            band.parts = [],
-            band.instantWidth = 100; // arbitray value
+        band.parts = [];
+        band.instantWidth = 100; // arbitray value
 
-        band.xScale = d3.scaleTime()
-            .domain([data.minDate, data.maxDate])
-            .range([0, band.w]);
-
-        band.yScale = function (track) {
-            return band.trackOffset + track * band.trackHeight;
+        band.createOrUpdateXScale = () => {
+            if (!band.xScale) {
+                band.xScale = d3.scaleTime()
+                    .range([0, band.w]);
+            }
+            band.xScale.domain([data.minDate, data.maxDate]);
         };
+        band.createOrUpdateYScale = () => {
+            band.trackHeight = Math.min((band.h - band.trackOffset) / data.nTracks, config.trackHeight);
+            band.itemHeight = Math.max(band.trackHeight -1, band.trackHeight * 0.8);
+            band.yScale = function (track) {
+                return band.trackOffset + track * band.trackHeight;
+            };
+        };
+
+        band.createOrUpdateXScale();
+        band.createOrUpdateYScale();
 
         // band.gBelow = chart.append("g")
         //     .attr("id", `${band.id}-below`)
@@ -274,14 +325,32 @@ const timeline = (domElement, overrideConfig) => {
             .attr("width", band.w)
             .attr("height", band.h);
 
-        const lines = band.g.selectAll('line.path')
-            .data(data.lines)
-            .enter().append('path')
-            .attr('d', d => {
-                const x = band.xScale(d.date);
-                return `M${x} 0 L${x} ${band.h}`
-            })
-            .attr('class', d => `line ${d.className}`);
+
+        band.createOrUpdateLines = () => {
+
+            if (!band.lines){
+                band.lines = band.g.selectAll('line.path');
+            }
+
+            const orgLines = band.lines
+                .data(data.lines);
+
+            const newlines = orgLines.enter()
+                .append('path')
+                .attr('class', d => `line ${d.className}`);
+
+            orgLines.exit().remove();
+
+            band.lines =
+                orgLines.merge(newlines)
+                .attr('d', d => {
+                    const x = band.xScale(d.date);
+                    return `M${x} 0 L${x} ${band.h}`
+                })
+                .attr('class', d => `line ${d.className}`);
+
+        };
+        band.createOrUpdateLines();
 
         const mouseoverLine = band.g.append('path')
             .attr('d', `M0 0 L0 ${band.h}`)
@@ -289,66 +358,130 @@ const timeline = (domElement, overrideConfig) => {
             .style('display', 'none')
         ;
 
-        // Items
-        const items = band.g.selectAll("g")
-            .data(data.items)
-            .enter().append("svg")
-            .attr("y", function (d) { return band.yScale(d.track); })
-            .attr("height", band.itemHeight)
-            .attr("class", function (d) { return d.instant ? "part instant" : "part interval";});
 
-        var intervals = svg.select("#band" + bandNum).selectAll(".interval");
-        intervals.append("rect")
-            .attr("width", "100%")
-            .attr("height", "100%");
-        intervals.selectAll('rect.step')
-            .data(d => d.steps)
-            .enter()
-            .append('rect')
-            .attr('class', ds => `step ${ds.className}`)
-            .attr('x', ds => `${ds.startPercentage*100}%`)
-            .attr('y', 0)
-            .attr('width', ds => `${(ds.endPercentage - ds.startPercentage)*100}%`)
-            .attr('height', band.itemHeight)
-        ;
+        band.createOrUpdateInterval = () => {
 
-        if (config.label) {
-            intervals.append("text")
-                .attr("class", "intervalLabel")
-                .attr("x", 1)
-                .attr("y", 10)
-                .text(function (d) { return d.label; });
-        }
+            if (!band.items) {
+                band.items = band.g.selectAll("g");
+            }
 
-        var instants = svg.select("#band" + bandNum).selectAll(".instant");
-        instants.append("circle")
-            .attr("cx", band.itemHeight / 2)
-            .attr("cy", band.itemHeight / 2)
-            .attr("r", 5);
+            const orgItems = band.items
+                .data(data.items);
 
-        if (config.label){
-            instants.append("text")
-                .attr("class", "instantLabel")
-                .attr("x", 15)
-                .attr("y", 10)
-                .text(function (d) { return d.label; });
-        }
+            const newItems = orgItems
+                .enter()
+                .append("svg");
+
+            newItems.append('rect')
+                .attr("width", "100%")
+                .attr("height", "100%");
+
+            orgItems.exit().remove();
+
+            band.items = orgItems.merge(newItems)
+                .attr("y", function (d) {
+                    return band.yScale(d.track);
+                })
+                .attr("height", band.itemHeight)
+                .attr("class", function (d) {
+                    return d.instant ? "part instant" : "part interval";
+                });
+
+
+            // if (!band.intervals) {
+            //     band.intervals = band.g.selectAll(".interval");
+            //     band.intervals.append("rect")
+            //         .attr("width", "100%")
+            //         .attr("height", "100%");
+            // }
+
+            // const intervals = band.g.selectAll(".interval");
+
+            console.log('to be remove', band.items.selectAll('rect'))
+            // intervals.selectAll('rect').remove();
+
+
+            // if (!band.steps) {
+            //
+            //
+            //
+            // }
+
+            const oldSteps = band.items.selectAll('rect.step')
+                .data(d => d.steps);
+
+            const newSteps = oldSteps
+                .enter()
+                .append('rect');
+
+            oldSteps.exit().remove();
+
+            const steps = oldSteps.merge(newSteps)
+                .attr('class', ds => `step ${ds.className}`)
+                .attr('x', ds => `${ds.startPercentage * 100}%`)
+                .attr('y', 0)
+                .attr('width', ds => `${(ds.endPercentage - ds.startPercentage) * 100}%`)
+                .attr('height', band.itemHeight)
+            ;
+
+            // if (!band.labels) {
+            //     band.labels =
+            // }
+
+            band.items.selectAll("text").remove();
+
+            if (config.label) {
+                band.items.append("text")
+                    .attr("class", "intervalLabel")
+                    .attr("x", 1)
+                    .attr("y", 10)
+                    .text(function (d) {
+                        return d.label;
+                    });
+            }
+
+            // band.intervals = intervals;
+
+        };
+        band.createOrUpdateInterval();
+
+        // var instants = svg.select("#band" + bandNum).selectAll(".instant");
+        // instants.append("circle")
+        //     .attr("cx", band.itemHeight / 2)
+        //     .attr("cy", band.itemHeight / 2)
+        //     .attr("r", 5);
+        //
+        // if (config.label){
+        //     instants.append("text")
+        //         .attr("class", "instantLabel")
+        //         .attr("x", 15)
+        //         .attr("y", 10)
+        //         .text(function (d) { return d.label; });
+        // }
 
         band.addActions = function(actions) {
             // actions - array: [[trigger, function], ...]
             actions.forEach(function (action) {
-                items.on(action[0], action[1]);
+                band.items.on(action[0], action[1]);
             })
         };
 
 
+        band.update = function () {
+            band.range = null;
+            band.createOrUpdateXScale();
+            band.createOrUpdateYScale();
+            band.createOrUpdateLines();
+            band.createOrUpdateInterval();
+        };
+
         band.redraw = function () {
-            items
+            band.items
                 .attr("x", function (d) { return band.xScale(d.start);})
                 .attr("width", function (d) {
                     return band.xScale(d.end) - band.xScale(d.start); });
 
-            lines
+            band.lines
                 .attr('d', d => {
                     const x = band.xScale(d.date);
                     return `M${x} 0 L${x} ${band.h}`
@@ -458,17 +591,14 @@ const timeline = (domElement, overrideConfig) => {
 
     timeline.tooltips = function (bandName) {
 
-        var band = bands[bandName];
+        const band = bands[bandName];
 
         band.addActions([
             // trigger, function
             ["mouseover", showTooltip],
-            ["mouseout", hideTooltip]
+            ["mouseout", hideTooltip],
+            ['click', config.onClick]
         ]);
-
-        function getHtml(element, d) {
-            return d.label + "<br>" + format(d.start) + " - " + format(d.end);
-        }
 
         function showTooltip (d) {
 
@@ -480,7 +610,7 @@ const timeline = (domElement, overrideConfig) => {
                     : d3.event.pageY - 30;
 
             tooltip
-                .html(getHtml(d3.select(this), d))
+                .html(config.tooltipContent(d, d3.select(this)))
                 .style("top", y + "px")
                 .style("left", x + "px")
                 .style("visibility", "visible");
@@ -529,7 +659,11 @@ const timeline = (domElement, overrideConfig) => {
     //
 
     timeline.updateRange = domain => {
+        if (domain == null) {
+            return timeline;
+        }
         const band = bands['mainBand'];
+        console.log('domain', domain);
         band.xScale.domain(domain);
         band.redraw();
         return timeline;
@@ -586,59 +720,6 @@ const timeline = (domElement, overrideConfig) => {
     // Utility functions
     //
 
-    function parseDate(dateString) {
-        return dateString;
-        // // 'dateString' must either conform to the ISO date format YYYY-MM-DD
-        // // or be a full year without month and day.
-        // // AD years may not contain letters, only digits '0'-'9'!
-        // // Invalid AD years: '10 AD', '1234 AD', '500 CE', '300 n.Chr.'
-        // // Valid AD years: '1', '99', '2013'
-        // // BC years must contain letters or negative numbers!
-        // // Valid BC years: '1 BC', '-1', '12 BCE', '10 v.Chr.', '-384'
-        // // A dateString of '0' will be converted to '1 BC'.
-        // // Because JavaScript can't define AD years between 0..99,
-        // // these years require a special treatment.
-        //
-        // var format = d3.time.format("%Y-%m-%d"),
-        //     date,
-        //     year;
-        //
-        // date = format.parse(dateString);
-        // if (date !== null) return date;
-        //
-        // // BC yearStrings are not numbers!
-        // if (isNaN(dateString)) { // Handle BC year
-        //     // Remove non-digits, convert to negative number
-        //     year = -(dateString.replace(/[^0-9]/g, ""));
-        // } else { // Handle AD year
-        //     // Convert to positive number
-        //     year = +dateString;
-        // }
-        // if (year < 0 || year > 99) { // 'Normal' dates
-        //     date = new Date(year, 6, 1);
-        // } else if (year == 0) { // Year 0 is '1 BC'
-        //     date = new Date (-1, 6, 1);
-        // } else { // Create arbitrary year and then set the correct year
-        //     // For full years, I chose to set the date to mid year (1st of July).
-        //     date = new Date(year, 6, 1);
-        //     date.setUTCFullYear(("0000" + year).slice(-4));
-        // }
-        // // Finally create the date
-        // return date;
-    }
-
-    function format(date, bcString) {
-        return date.toString();
-        // // bcString is the prefix or postfix for BC dates.
-        // // If bcString starts with '-' (minus),
-        // // if will be placed in front of the year.
-        // bcString = bcString || " BC" // With blank!
-        // var year = date.getUTCFullYear();
-        // if (year > 0) return year.toString();
-        // if (bcString[0] == '-') return bcString + (-year);
-        // return (-year) + bcString;
-    }
-
     timeline.updateBrushRange = range => {
 
         if (range) {
@@ -651,6 +732,8 @@ const timeline = (domElement, overrideConfig) => {
                 }
             }
         }
+
+        return timeline;
 
     };
 
