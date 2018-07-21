@@ -46,7 +46,7 @@ export default class StoryWithBrush extends React.Component {
     }
 
     updateData = () => {
-        const data = mockData({size: R.defaultTo(30, props.dataSize)});
+        const data = mockData({size: R.defaultTo(30, this.props.dataSize)});
         let domain;
         if (this.state.domain) {
             domain = this.state.domain;
@@ -69,7 +69,7 @@ export default class StoryWithBrush extends React.Component {
         return (
             <div>
 
-                {!showButton ? null : <button onClick={this.updateData}>Generate Random Data</button>}
+                {!showButton ? null : <button id='generate-button' onClick={this.updateData}>Generate Random Data</button>}
 
                 <Range range={this.state.domain}/>
 
@@ -77,7 +77,7 @@ export default class StoryWithBrush extends React.Component {
                           lines={this.state.lines}
                           width={500} height={250}
                           range={this.state.domain}
-                          onMouseover={val => console.log(val)}/>
+                          onMouseover={val => {}}/>
 
                 <Timeline data={this.state.data}
                           lines={this.state.lines}

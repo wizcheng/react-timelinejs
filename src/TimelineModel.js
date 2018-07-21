@@ -397,7 +397,6 @@ const timeline = (domElement, overrideConfig) => {
 
             // const intervals = band.g.selectAll(".interval");
 
-            console.log('to be remove', band.items.selectAll('rect'))
             // intervals.selectAll('rect').remove();
 
 
@@ -663,7 +662,6 @@ const timeline = (domElement, overrideConfig) => {
             return timeline;
         }
         const band = bands['mainBand'];
-        console.log('domain', domain);
         band.xScale.domain(domain);
         band.redraw();
         return timeline;
@@ -709,7 +707,6 @@ const timeline = (domElement, overrideConfig) => {
     //
 
     timeline.redraw = function () {
-        console.log('redraw');
         components.forEach(function (component) {
             component.redraw();
         })
