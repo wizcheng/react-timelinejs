@@ -1,0 +1,786 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render update brush properties 1`] = `
+"
+<div>
+  <button id=\\"update-mock-data\\">
+    generate
+  </button>
+  <div>
+    <svg class=\\"svg\\"
+         id=\\"svg\\"
+         width=\\"700\\"
+         height=\\"400\\"
+    >
+      <g transform=\\"translate(0,0)\\">
+        <clipPath id=\\"chart-area\\">
+          <rect width=\\"700\\"
+                height=\\"400\\"
+          >
+          </rect>
+        </clipPath>
+        <g class=\\"chart\\"
+           clip-path=\\"url(#chart-area)\\"
+        >
+          <g id=\\"band0\\"
+             transform=\\"translate(0,0)\\"
+          >
+            <rect class=\\"band\\"
+                  width=\\"700\\"
+                  height=\\"380\\"
+            >
+            </rect>
+            <path class=\\"line test\\"
+                  d=\\"M-264.3346264548154 0 L-264.3346264548154 380\\"
+            >
+            </path>
+            <path class=\\"line test\\"
+                  d=\\"M-232.47219810308044 0 L-232.47219810308044 380\\"
+            >
+            </path>
+            <path class=\\"line test\\"
+                  d=\\"M-200.60976975134548 0 L-200.60976975134548 380\\"
+            >
+            </path>
+            <path class=\\"line test\\"
+                  d=\\"M-168.74734139961052 0 L-168.74734139961052 380\\"
+            >
+            </path>
+            <path class=\\"line test\\"
+                  d=\\"M-136.88491304787556 0 L-136.88491304787556 380\\"
+            >
+            </path>
+            <path class=\\"line test\\"
+                  d=\\"M-105.0224846961406 0 L-105.0224846961406 380\\"
+            >
+            </path>
+            <path class=\\"line test\\"
+                  d=\\"M-73.16005634440565 0 L-73.16005634440565 380\\"
+            >
+            </path>
+            <path class=\\"line test\\"
+                  d=\\"M-41.297627992670684 0 L-41.297627992670684 380\\"
+            >
+            </path>
+            <path class=\\"line test\\"
+                  d=\\"M-9.43519964093572 0 L-9.43519964093572 380\\"
+            >
+            </path>
+            <path class=\\"line test\\"
+                  d=\\"M22.42722871079924 0 L22.42722871079924 380\\"
+            >
+            </path>
+            <path d=\\"M0 0 L0 380\\"
+                  class=\\"mouseover-line\\"
+                  style=\\"display: none;\\"
+            >
+            </path>
+            <svg y=\\"4\\"
+                 height=\\"19\\"
+                 class=\\"part interval\\"
+                 x=\\"660.7030050328602\\"
+                 width=\\"39.29699496713977\\"
+            >
+              <rect width=\\"100%\\"
+                    height=\\"100%\\"
+              >
+              </rect>
+              <rect class=\\"step custom_1\\"
+                    x=\\"10%\\"
+                    y=\\"0\\"
+                    width=\\"20%\\"
+                    height=\\"19\\"
+              >
+              </rect>
+              <rect class=\\"step custom_1\\"
+                    x=\\"40%\\"
+                    y=\\"0\\"
+                    width=\\"9.999999999999998%\\"
+                    height=\\"19\\"
+              >
+              </rect>
+              <rect class=\\"step custom_1\\"
+                    x=\\"55.00000000000001%\\"
+                    y=\\"0\\"
+                    width=\\"19.999999999999996%\\"
+                    height=\\"19\\"
+              >
+              </rect>
+              <text class=\\"intervalLabel\\"
+                    x=\\"1\\"
+                    y=\\"10\\"
+              >
+                event 2
+              </text>
+            </svg>
+            <svg y=\\"4\\"
+                 height=\\"19\\"
+                 class=\\"part interval\\"
+                 x=\\"45.06531589189063\\"
+                 width=\\"24.427861736330136\\"
+            >
+              <rect width=\\"100%\\"
+                    height=\\"100%\\"
+              >
+              </rect>
+              <rect class=\\"step custom_1\\"
+                    x=\\"10%\\"
+                    y=\\"0\\"
+                    width=\\"20%\\"
+                    height=\\"19\\"
+              >
+              </rect>
+              <rect class=\\"step custom_1\\"
+                    x=\\"40%\\"
+                    y=\\"0\\"
+                    width=\\"9.999999999999998%\\"
+                    height=\\"19\\"
+              >
+              </rect>
+              <rect class=\\"step custom_1\\"
+                    x=\\"55.00000000000001%\\"
+                    y=\\"0\\"
+                    width=\\"19.999999999999996%\\"
+                    height=\\"19\\"
+              >
+              </rect>
+              <text class=\\"intervalLabel\\"
+                    x=\\"1\\"
+                    y=\\"10\\"
+              >
+                event 0
+              </text>
+            </svg>
+            <svg y=\\"4\\"
+                 height=\\"19\\"
+                 class=\\"part interval\\"
+                 x=\\"0\\"
+                 width=\\"18.586416538512058\\"
+            >
+              <rect width=\\"100%\\"
+                    height=\\"100%\\"
+              >
+              </rect>
+              <rect class=\\"step custom_1\\"
+                    x=\\"10%\\"
+                    y=\\"0\\"
+                    width=\\"20%\\"
+                    height=\\"19\\"
+              >
+              </rect>
+              <rect class=\\"step custom_1\\"
+                    x=\\"40%\\"
+                    y=\\"0\\"
+                    width=\\"9.999999999999998%\\"
+                    height=\\"19\\"
+              >
+              </rect>
+              <rect class=\\"step custom_1\\"
+                    x=\\"55.00000000000001%\\"
+                    y=\\"0\\"
+                    width=\\"19.999999999999996%\\"
+                    height=\\"19\\"
+              >
+              </rect>
+              <text class=\\"intervalLabel\\"
+                    x=\\"1\\"
+                    y=\\"10\\"
+              >
+                event 1
+              </text>
+            </svg>
+            <svg class=\\"x brush\\"
+                 fill=\\"none\\"
+                 pointer-events=\\"all\\"
+            >
+              <rect class=\\"overlay\\"
+                    pointer-events=\\"all\\"
+                    cursor=\\"crosshair\\"
+                    x=\\"0\\"
+                    y=\\"4\\"
+                    width=\\"700\\"
+                    height=\\"376\\"
+              >
+              </rect>
+              <rect class=\\"selection\\"
+                    cursor=\\"move\\"
+                    fill=\\"#777\\"
+                    fill-opacity=\\"0.3\\"
+                    stroke=\\"#fff\\"
+                    shape-rendering=\\"crispEdges\\"
+                    style
+                    y=\\"0\\"
+                    height=\\"380\\"
+                    x=\\"174.99999778733135\\"
+                    width=\\"349.99999557466265\\"
+              >
+              </rect>
+              <rect class=\\"handle handle--e\\"
+                    cursor=\\"ew-resize\\"
+                    style
+                    y=\\"-3\\"
+                    height=\\"386\\"
+                    x=\\"521.999993361994\\"
+                    width=\\"6\\"
+              >
+              </rect>
+              <rect class=\\"handle handle--w\\"
+                    cursor=\\"ew-resize\\"
+                    style
+                    y=\\"-3\\"
+                    height=\\"386\\"
+                    x=\\"171.99999778733135\\"
+                    width=\\"6\\"
+              >
+              </rect>
+            </svg>
+          </g>
+          <g class=\\"axis\\"
+             transform=\\"translate(0,380)\\"
+             fill=\\"none\\"
+             font-size=\\"10\\"
+             font-family=\\"sans-serif\\"
+             text-anchor=\\"middle\\"
+          >
+            <path class=\\"domain\\"
+                  stroke=\\"#000\\"
+                  d=\\"M0.5,6V0.5H700.5V6\\"
+            >
+            </path>
+            <g class=\\"tick\\"
+               opacity=\\"1\\"
+               transform=\\"translate(22.92722871079924,0)\\"
+            >
+              <line stroke=\\"#000\\"
+                    y2=\\"6\\"
+              >
+              </line>
+              <text fill=\\"#000\\"
+                    y=\\"9\\"
+                    dy=\\"0.71em\\"
+              >
+                09 AM
+              </text>
+            </g>
+            <g class=\\"tick\\"
+               opacity=\\"1\\"
+               transform=\\"translate(118.51451376600411,0)\\"
+            >
+              <line stroke=\\"#000\\"
+                    y2=\\"6\\"
+              >
+              </line>
+              <text fill=\\"#000\\"
+                    y=\\"9\\"
+                    dy=\\"0.71em\\"
+              >
+                12 PM
+              </text>
+            </g>
+            <g class=\\"tick\\"
+               opacity=\\"1\\"
+               transform=\\"translate(214.101798821209,0)\\"
+            >
+              <line stroke=\\"#000\\"
+                    y2=\\"6\\"
+              >
+              </line>
+              <text fill=\\"#000\\"
+                    y=\\"9\\"
+                    dy=\\"0.71em\\"
+              >
+                03 PM
+              </text>
+            </g>
+            <g class=\\"tick\\"
+               opacity=\\"1\\"
+               transform=\\"translate(309.68908387641386,0)\\"
+            >
+              <line stroke=\\"#000\\"
+                    y2=\\"6\\"
+              >
+              </line>
+              <text fill=\\"#000\\"
+                    y=\\"9\\"
+                    dy=\\"0.71em\\"
+              >
+                06 PM
+              </text>
+            </g>
+            <g class=\\"tick\\"
+               opacity=\\"1\\"
+               transform=\\"translate(405.2763689316188,0)\\"
+            >
+              <line stroke=\\"#000\\"
+                    y2=\\"6\\"
+              >
+              </line>
+              <text fill=\\"#000\\"
+                    y=\\"9\\"
+                    dy=\\"0.71em\\"
+              >
+                09 PM
+              </text>
+            </g>
+            <g class=\\"tick\\"
+               opacity=\\"1\\"
+               transform=\\"translate(500.86365398682364,0)\\"
+            >
+              <line stroke=\\"#000\\"
+                    y2=\\"6\\"
+              >
+              </line>
+              <text fill=\\"#000\\"
+                    y=\\"9\\"
+                    dy=\\"0.71em\\"
+              >
+                Jul 15
+              </text>
+            </g>
+            <g class=\\"tick\\"
+               opacity=\\"1\\"
+               transform=\\"translate(596.4509390420285,0)\\"
+            >
+              <line stroke=\\"#000\\"
+                    y2=\\"6\\"
+              >
+              </line>
+              <text fill=\\"#000\\"
+                    y=\\"9\\"
+                    dy=\\"0.71em\\"
+              >
+                03 AM
+              </text>
+            </g>
+            <g class=\\"tick\\"
+               opacity=\\"1\\"
+               transform=\\"translate(692.0382240972334,0)\\"
+            >
+              <line stroke=\\"#000\\"
+                    y2=\\"6\\"
+              >
+              </line>
+              <text fill=\\"#000\\"
+                    y=\\"9\\"
+                    dy=\\"0.71em\\"
+              >
+                06 AM
+              </text>
+            </g>
+          </g>
+        </g>
+      </g>
+    </svg>
+    <div class=\\"tooltip\\"
+         id=\\"tooltip\\"
+         style=\\"visibility: hidden;\\"
+    >
+    </div>
+  </div>
+</div>
+"
+`;
+
+exports[`render update brush properties 2`] = `
+"
+<div>
+  <button id=\\"update-mock-data\\">
+    generate
+  </button>
+  <div>
+    <svg class=\\"svg\\"
+         id=\\"svg\\"
+         width=\\"700\\"
+         height=\\"400\\"
+    >
+      <g transform=\\"translate(0,0)\\">
+        <clipPath id=\\"chart-area\\">
+          <rect width=\\"700\\"
+                height=\\"400\\"
+          >
+          </rect>
+        </clipPath>
+        <g class=\\"chart\\"
+           clip-path=\\"url(#chart-area)\\"
+        >
+          <g id=\\"band0\\"
+             transform=\\"translate(0,0)\\"
+          >
+            <rect class=\\"band\\"
+                  width=\\"700\\"
+                  height=\\"380\\"
+            >
+            </rect>
+            <path class=\\"line test\\"
+                  d=\\"M-28.387717862543663 0 L-28.387717862543663 380\\"
+            >
+            </path>
+            <path class=\\"line test\\"
+                  d=\\"M4.981898307418913 0 L4.981898307418913 380\\"
+            >
+            </path>
+            <path class=\\"line test\\"
+                  d=\\"M38.35151447738149 0 L38.35151447738149 380\\"
+            >
+            </path>
+            <path class=\\"line test\\"
+                  d=\\"M71.72113064734407 0 L71.72113064734407 380\\"
+            >
+            </path>
+            <path class=\\"line test\\"
+                  d=\\"M105.09074681730665 0 L105.09074681730665 380\\"
+            >
+            </path>
+            <path class=\\"line test\\"
+                  d=\\"M138.4603629872692 0 L138.4603629872692 380\\"
+            >
+            </path>
+            <path class=\\"line test\\"
+                  d=\\"M171.8299791572318 0 L171.8299791572318 380\\"
+            >
+            </path>
+            <path class=\\"line test\\"
+                  d=\\"M205.19959532719437 0 L205.19959532719437 380\\"
+            >
+            </path>
+            <path class=\\"line test\\"
+                  d=\\"M238.56921149715694 0 L238.56921149715694 380\\"
+            >
+            </path>
+            <path class=\\"line test\\"
+                  d=\\"M271.93882766711954 0 L271.93882766711954 380\\"
+            >
+            </path>
+            <path d=\\"M0 0 L0 380\\"
+                  class=\\"mouseover-line\\"
+                  style=\\"display: none;\\"
+            >
+            </path>
+            <svg y=\\"4\\"
+                 height=\\"19\\"
+                 class=\\"part interval\\"
+                 x=\\"0\\"
+                 width=\\"48.94210371594511\\"
+            >
+              <rect width=\\"100%\\"
+                    height=\\"100%\\"
+              >
+              </rect>
+              <rect class=\\"step custom_1\\"
+                    x=\\"10%\\"
+                    y=\\"0\\"
+                    width=\\"20%\\"
+                    height=\\"19\\"
+              >
+              </rect>
+              <rect class=\\"step custom_1\\"
+                    x=\\"40%\\"
+                    y=\\"0\\"
+                    width=\\"9.999999999999998%\\"
+                    height=\\"19\\"
+              >
+              </rect>
+              <rect class=\\"step custom_1\\"
+                    x=\\"55.00000000000001%\\"
+                    y=\\"0\\"
+                    width=\\"19.999999999999996%\\"
+                    height=\\"19\\"
+              >
+              </rect>
+              <text class=\\"intervalLabel\\"
+                    x=\\"1\\"
+                    y=\\"10\\"
+              >
+                event 2
+              </text>
+            </svg>
+            <svg y=\\"4\\"
+                 height=\\"19\\"
+                 class=\\"part interval\\"
+                 x=\\"650.5017360145555\\"
+                 width=\\"49.49826398544451\\"
+            >
+              <rect width=\\"100%\\"
+                    height=\\"100%\\"
+              >
+              </rect>
+              <rect class=\\"step custom_1\\"
+                    x=\\"10%\\"
+                    y=\\"0\\"
+                    width=\\"20%\\"
+                    height=\\"19\\"
+              >
+              </rect>
+              <rect class=\\"step custom_1\\"
+                    x=\\"40%\\"
+                    y=\\"0\\"
+                    width=\\"9.999999999999998%\\"
+                    height=\\"19\\"
+              >
+              </rect>
+              <rect class=\\"step custom_1\\"
+                    x=\\"55.00000000000001%\\"
+                    y=\\"0\\"
+                    width=\\"19.999999999999996%\\"
+                    height=\\"19\\"
+              >
+              </rect>
+              <text class=\\"intervalLabel\\"
+                    x=\\"1\\"
+                    y=\\"10\\"
+              >
+                event 3
+              </text>
+            </svg>
+            <svg y=\\"4\\"
+                 height=\\"19\\"
+                 class=\\"part interval\\"
+                 x=\\"511.0095566872975\\"
+                 width=\\"15.016327276483253\\"
+            >
+              <rect width=\\"100%\\"
+                    height=\\"100%\\"
+              >
+              </rect>
+              <rect class=\\"step custom_1\\"
+                    x=\\"10%\\"
+                    y=\\"0\\"
+                    width=\\"20%\\"
+                    height=\\"19\\"
+              >
+              </rect>
+              <rect class=\\"step custom_1\\"
+                    x=\\"40%\\"
+                    y=\\"0\\"
+                    width=\\"9.999999999999998%\\"
+                    height=\\"19\\"
+              >
+              </rect>
+              <rect class=\\"step custom_1\\"
+                    x=\\"55.00000000000001%\\"
+                    y=\\"0\\"
+                    width=\\"19.999999999999996%\\"
+                    height=\\"19\\"
+              >
+              </rect>
+              <text class=\\"intervalLabel\\"
+                    x=\\"1\\"
+                    y=\\"10\\"
+              >
+                event 0
+              </text>
+            </svg>
+            <svg y=\\"4\\"
+                 height=\\"19\\"
+                 class=\\"part interval\\"
+                 x=\\"122.18801262748649\\"
+                 width=\\"34.481936708961356\\"
+            >
+              <rect width=\\"100%\\"
+                    height=\\"100%\\"
+              >
+              </rect>
+              <rect class=\\"step custom_1\\"
+                    x=\\"10%\\"
+                    y=\\"0\\"
+                    width=\\"20%\\"
+                    height=\\"19\\"
+              >
+              </rect>
+              <rect class=\\"step custom_1\\"
+                    x=\\"40%\\"
+                    y=\\"0\\"
+                    width=\\"9.999999999999998%\\"
+                    height=\\"19\\"
+              >
+              </rect>
+              <rect class=\\"step custom_1\\"
+                    x=\\"55.00000000000001%\\"
+                    y=\\"0\\"
+                    width=\\"19.999999999999996%\\"
+                    height=\\"19\\"
+              >
+              </rect>
+              <text class=\\"intervalLabel\\"
+                    x=\\"1\\"
+                    y=\\"10\\"
+              >
+                event 1
+              </text>
+            </svg>
+            <svg class=\\"x brush\\"
+                 fill=\\"none\\"
+                 pointer-events=\\"all\\"
+            >
+              <rect class=\\"overlay\\"
+                    pointer-events=\\"all\\"
+                    cursor=\\"crosshair\\"
+                    x=\\"0\\"
+                    y=\\"4\\"
+                    width=\\"700\\"
+                    height=\\"376\\"
+              >
+              </rect>
+              <rect class=\\"selection\\"
+                    cursor=\\"move\\"
+                    fill=\\"#777\\"
+                    fill-opacity=\\"0.3\\"
+                    stroke=\\"#fff\\"
+                    shape-rendering=\\"crispEdges\\"
+                    style
+                    y=\\"0\\"
+                    height=\\"380\\"
+                    x=\\"175\\"
+                    width=\\"350\\"
+              >
+              </rect>
+              <rect class=\\"handle handle--e\\"
+                    cursor=\\"ew-resize\\"
+                    style
+                    y=\\"-3\\"
+                    height=\\"386\\"
+                    x=\\"522\\"
+                    width=\\"6\\"
+              >
+              </rect>
+              <rect class=\\"handle handle--w\\"
+                    cursor=\\"ew-resize\\"
+                    style
+                    y=\\"-3\\"
+                    height=\\"386\\"
+                    x=\\"172\\"
+                    width=\\"6\\"
+              >
+              </rect>
+            </svg>
+          </g>
+          <g class=\\"axis\\"
+             transform=\\"translate(0,380)\\"
+             fill=\\"none\\"
+             font-size=\\"10\\"
+             font-family=\\"sans-serif\\"
+             text-anchor=\\"middle\\"
+          >
+            <path class=\\"domain\\"
+                  stroke=\\"#000\\"
+                  d=\\"M0.5,6V0.5H700.5V6\\"
+            >
+            </path>
+            <g class=\\"tick\\"
+               opacity=\\"1\\"
+               transform=\\"translate(72.22113064734407,0)\\"
+            >
+              <line stroke=\\"#000\\"
+                    y2=\\"6\\"
+              >
+              </line>
+              <text fill=\\"#000\\"
+                    y=\\"9\\"
+                    dy=\\"0.71em\\"
+              >
+                03 AM
+              </text>
+            </g>
+            <g class=\\"tick\\"
+               opacity=\\"1\\"
+               transform=\\"translate(172.3299791572318,0)\\"
+            >
+              <line stroke=\\"#000\\"
+                    y2=\\"6\\"
+              >
+              </line>
+              <text fill=\\"#000\\"
+                    y=\\"9\\"
+                    dy=\\"0.71em\\"
+              >
+                06 AM
+              </text>
+            </g>
+            <g class=\\"tick\\"
+               opacity=\\"1\\"
+               transform=\\"translate(272.43882766711954,0)\\"
+            >
+              <line stroke=\\"#000\\"
+                    y2=\\"6\\"
+              >
+              </line>
+              <text fill=\\"#000\\"
+                    y=\\"9\\"
+                    dy=\\"0.71em\\"
+              >
+                09 AM
+              </text>
+            </g>
+            <g class=\\"tick\\"
+               opacity=\\"1\\"
+               transform=\\"translate(372.5476761770073,0)\\"
+            >
+              <line stroke=\\"#000\\"
+                    y2=\\"6\\"
+              >
+              </line>
+              <text fill=\\"#000\\"
+                    y=\\"9\\"
+                    dy=\\"0.71em\\"
+              >
+                12 PM
+              </text>
+            </g>
+            <g class=\\"tick\\"
+               opacity=\\"1\\"
+               transform=\\"translate(472.656524686895,0)\\"
+            >
+              <line stroke=\\"#000\\"
+                    y2=\\"6\\"
+              >
+              </line>
+              <text fill=\\"#000\\"
+                    y=\\"9\\"
+                    dy=\\"0.71em\\"
+              >
+                03 PM
+              </text>
+            </g>
+            <g class=\\"tick\\"
+               opacity=\\"1\\"
+               transform=\\"translate(572.7653731967828,0)\\"
+            >
+              <line stroke=\\"#000\\"
+                    y2=\\"6\\"
+              >
+              </line>
+              <text fill=\\"#000\\"
+                    y=\\"9\\"
+                    dy=\\"0.71em\\"
+              >
+                06 PM
+              </text>
+            </g>
+            <g class=\\"tick\\"
+               opacity=\\"1\\"
+               transform=\\"translate(672.8742217066705,0)\\"
+            >
+              <line stroke=\\"#000\\"
+                    y2=\\"6\\"
+              >
+              </line>
+              <text fill=\\"#000\\"
+                    y=\\"9\\"
+                    dy=\\"0.71em\\"
+              >
+                09 PM
+              </text>
+            </g>
+          </g>
+        </g>
+      </g>
+    </svg>
+    <div class=\\"tooltip\\"
+         id=\\"tooltip\\"
+         style=\\"visibility: hidden;\\"
+    >
+    </div>
+  </div>
+</div>
+"
+`;

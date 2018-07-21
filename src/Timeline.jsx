@@ -2,13 +2,27 @@ import React from 'react';
 import timeline from './TimelineModel';
 import './Timeline.css';
 import * as R from 'ramda';
+import PropTypes from 'prop-types';
 
+const propTypes = {
+    data: PropTypes.array.isRequired,
+    lines: PropTypes.array,
 
-// const propTypes = {
-//     label: PropTypes.string.isRequired,
-//     onChange: PropTypes.func.isRequired,
-//     styles: PropTypes.object
-// };
+    dataKey: PropTypes.string,
+    width: PropTypes.number,
+    height: PropTypes.number,
+    trackHeight: PropTypes.number,
+    label: PropTypes.bool,
+    tooltips: PropTypes.bool,
+    tooltipContent: PropTypes.func,
+    brush: PropTypes.bool,
+    brushRange: PropTypes.array,
+    range: PropTypes.array,
+    onBrush: PropTypes.func,
+    onMouseover: PropTypes.func,
+    onClick: PropTypes.func,
+};
+
 //
 // const defaultProps = {
 //     styles: {
@@ -80,7 +94,7 @@ class Timeline extends React.Component {
     }
 }
 
-// Timeline.propTypes = propTypes;
+Timeline.propTypes = propTypes;
 // Timeline.defaultProps = defaultProps;
 
 export default Timeline;
