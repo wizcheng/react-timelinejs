@@ -42,18 +42,21 @@ export const mockData = ({size = 10, date = moment('2018-07-14'), breakdown = tr
         const duration = end.toDate().getTime() - start.toDate().getTime();
         const steps = !breakdown ? [] : [
             {
+                key: 1,
                 start: new Date(start.toDate().getTime() + duration / 10),
                 end: new Date(start.toDate().getTime() + duration / 10 * 3),
                 label: 'sub event 1',
                 className: 'custom_1'
             },
             {
+                key: 2,
                 start: new Date(start.toDate().getTime() + duration / 10 * 4),
                 end: new Date(start.toDate().getTime() + duration / 10 * 5),
                 label: 'sub event 2',
                 className: 'custom_1'
             },
             {
+                key: 3,
                 start: new Date(start.toDate().getTime() + duration / 10 * 5.5),
                 end: new Date(start.toDate().getTime() + duration / 10 * 7.5),
                 label: 'sub event 3',
@@ -61,6 +64,7 @@ export const mockData = ({size = 10, date = moment('2018-07-14'), breakdown = tr
             }
         ];
         arr.push({
+            key: i, // this is a very bad example, this is done intentionally to verify update function
             start: start.toDate(),
             end: end.toDate(),
             label: `event ${i}`,

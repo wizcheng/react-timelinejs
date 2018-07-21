@@ -29,7 +29,7 @@ class StatefulTimeline extends React.Component {
         return (
             <div>
                 <button id='update-mock-data' onClick={this.updateMockData}>generate</button>
-                <Timeline data={data} dataKey='key' lines={lines} range={range}/>
+                <Timeline data={data} dataKey='key' lines={lines} brush={true} brushRange={range}/>
             </div>
         )
     }
@@ -38,10 +38,10 @@ class StatefulTimeline extends React.Component {
 }
 
 
-test('render update data properties', () => {
+test('render update brush properties', () => {
     const wrapper = mount(<StatefulTimeline/>);
     expect(html(wrapper)).toMatchSnapshot();
-    wrapper.find('#update-mock-data').simulate('click')
+    wrapper.find('#update-mock-data').simulate('click');
     expect(html(wrapper)).toMatchSnapshot();
 });
 

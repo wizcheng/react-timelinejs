@@ -55,8 +55,9 @@ class Timeline extends React.Component {
 
     createTimeline = () => {
 
-        const {data, lines, height, width, trackHeight, label, tooltips, tooltipContent, brush, brushRange, onBrush, onMouseover, onClick, range} = this.props;
+        const {data, dataKey, lines, height, width, trackHeight, label, tooltips, tooltipContent, brush, brushRange, onBrush, onMouseover, onClick, range} = this.props;
         const config = {
+            dataKey,
             width,
             height,
             trackHeight,

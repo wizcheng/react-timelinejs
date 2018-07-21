@@ -56,6 +56,7 @@ const timeline = (domElement, overrideConfig) => {
     // };
 
     const config = {
+        dataKey: overrideConfig.dataKey ? (d) => d[overrideConfig.dataKey] : null,
         width: defaultTo(700, overrideConfig.width),
         height: defaultTo(400, overrideConfig.height),
         trackHeight: defaultTo(20, overrideConfig.trackHeight),
@@ -366,7 +367,7 @@ const timeline = (domElement, overrideConfig) => {
             }
 
             const orgItems = band.items
-                .data(data.items);
+                .data(data.items, config.dataKey);
 
             const newItems = orgItems
                 .enter()

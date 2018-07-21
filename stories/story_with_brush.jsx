@@ -74,12 +74,14 @@ export default class StoryWithBrush extends React.Component {
                 <Range range={this.state.domain}/>
 
                 <Timeline data={this.state.data}
+                          dataKey='key'
                           lines={this.state.lines}
                           width={500} height={250}
                           range={this.state.domain}
                           onMouseover={val => {}}/>
 
                 <Timeline data={this.state.data}
+                          dataKey='key'
                           lines={this.state.lines}
                           width={500} height={80} trackHeight={6}
                           label={false} tooltips={false}
