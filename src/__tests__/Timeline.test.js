@@ -30,6 +30,12 @@ test('render without label', () => {
 
 });
 
+test('render with custom track height', () => {
+
+    const wrapper = mount(<Timeline data={mockData({size: 3})} trackHeight={40}/>);
+    expect(html(wrapper)).toMatchSnapshot();
+
+});
 // test('render with range', () => {
 //
 //     const data = mockData({size: 3});
