@@ -31,43 +31,43 @@ exports[`render update brush properties 1`] = `
             >
             </rect>
             <path class=\\"line test\\"
-                  d=\\"M-264.3346264548154 0 L-264.3346264548154 380\\"
+                  d=\\"M-878.6692595940302 0 L-878.6692595940302 380\\"
             >
             </path>
             <path class=\\"line test\\"
-                  d=\\"M-232.47219810308044 0 L-232.47219810308044 380\\"
+                  d=\\"M-814.9444020848346 0 L-814.9444020848346 380\\"
             >
             </path>
             <path class=\\"line test\\"
-                  d=\\"M-200.60976975134548 0 L-200.60976975134548 380\\"
+                  d=\\"M-751.2195445756389 0 L-751.2195445756389 380\\"
             >
             </path>
             <path class=\\"line test\\"
-                  d=\\"M-168.74734139961052 0 L-168.74734139961052 380\\"
+                  d=\\"M-687.4946870664434 0 L-687.4946870664434 380\\"
             >
             </path>
             <path class=\\"line test\\"
-                  d=\\"M-136.88491304787556 0 L-136.88491304787556 380\\"
+                  d=\\"M-623.7698295572478 0 L-623.7698295572478 380\\"
             >
             </path>
             <path class=\\"line test\\"
-                  d=\\"M-105.0224846961406 0 L-105.0224846961406 380\\"
+                  d=\\"M-560.0449720480522 0 L-560.0449720480522 380\\"
             >
             </path>
             <path class=\\"line test\\"
-                  d=\\"M-73.16005634440565 0 L-73.16005634440565 380\\"
+                  d=\\"M-496.3201145388566 0 L-496.3201145388566 380\\"
             >
             </path>
             <path class=\\"line test\\"
-                  d=\\"M-41.297627992670684 0 L-41.297627992670684 380\\"
+                  d=\\"M-432.59525702966096 0 L-432.59525702966096 380\\"
             >
             </path>
             <path class=\\"line test\\"
-                  d=\\"M-9.43519964093572 0 L-9.43519964093572 380\\"
+                  d=\\"M-368.87039952046536 0 L-368.87039952046536 380\\"
             >
             </path>
             <path class=\\"line test\\"
-                  d=\\"M22.42722871079924 0 L22.42722871079924 380\\"
+                  d=\\"M-305.1455420112698 0 L-305.1455420112698 380\\"
             >
             </path>
             <path d=\\"M0 0 L0 380\\"
@@ -78,8 +78,8 @@ exports[`render update brush properties 1`] = `
             <svg y=\\"4\\"
                  height=\\"19\\"
                  class=\\"part interval\\"
-                 x=\\"660.7030050328602\\"
-                 width=\\"39.29699496713977\\"
+                 x=\\"971.4060267733414\\"
+                 width=\\"78.59399092800777\\"
             >
               <rect width=\\"100%\\"
                     height=\\"100%\\"
@@ -116,8 +116,8 @@ exports[`render update brush properties 1`] = `
             <svg y=\\"4\\"
                  height=\\"19\\"
                  class=\\"part interval\\"
-                 x=\\"45.06531589189063\\"
-                 width=\\"24.427861736330136\\"
+                 x=\\"-259.8693670766232\\"
+                 width=\\"48.85572409038329\\"
             >
               <rect width=\\"100%\\"
                     height=\\"100%\\"
@@ -154,8 +154,8 @@ exports[`render update brush properties 1`] = `
             <svg y=\\"4\\"
                  height=\\"19\\"
                  class=\\"part interval\\"
-                 x=\\"0\\"
-                 width=\\"18.586416538512058\\"
+                 x=\\"-350\\"
+                 width=\\"37.172833547030734\\"
             >
               <rect width=\\"100%\\"
                     height=\\"100%\\"
@@ -189,51 +189,6 @@ exports[`render update brush properties 1`] = `
                 event 1
               </text>
             </svg>
-            <svg class=\\"x brush\\"
-                 fill=\\"none\\"
-                 pointer-events=\\"all\\"
-            >
-              <rect class=\\"overlay\\"
-                    pointer-events=\\"all\\"
-                    cursor=\\"crosshair\\"
-                    x=\\"0\\"
-                    y=\\"4\\"
-                    width=\\"700\\"
-                    height=\\"376\\"
-              >
-              </rect>
-              <rect class=\\"selection\\"
-                    cursor=\\"move\\"
-                    fill=\\"#777\\"
-                    fill-opacity=\\"0.3\\"
-                    stroke=\\"#fff\\"
-                    shape-rendering=\\"crispEdges\\"
-                    style
-                    y=\\"0\\"
-                    height=\\"380\\"
-                    x=\\"174.99999778733135\\"
-                    width=\\"349.99999557466265\\"
-              >
-              </rect>
-              <rect class=\\"handle handle--e\\"
-                    cursor=\\"ew-resize\\"
-                    style
-                    y=\\"-3\\"
-                    height=\\"386\\"
-                    x=\\"521.999993361994\\"
-                    width=\\"6\\"
-              >
-              </rect>
-              <rect class=\\"handle handle--w\\"
-                    cursor=\\"ew-resize\\"
-                    style
-                    y=\\"-3\\"
-                    height=\\"386\\"
-                    x=\\"171.99999778733135\\"
-                    width=\\"6\\"
-              >
-              </rect>
-            </svg>
           </g>
           <g class=\\"axis\\"
              transform=\\"translate(0,380)\\"
@@ -249,7 +204,7 @@ exports[`render update brush properties 1`] = `
             </path>
             <g class=\\"tick\\"
                opacity=\\"1\\"
-               transform=\\"translate(22.92722871079924,0)\\"
+               transform=\\"translate(13.978745534708198,0)\\"
             >
               <line stroke=\\"#000\\"
                     y2=\\"6\\"
@@ -259,27 +214,12 @@ exports[`render update brush properties 1`] = `
                     y=\\"9\\"
                     dy=\\"0.71em\\"
               >
-                09 AM
+                02 PM
               </text>
             </g>
             <g class=\\"tick\\"
                opacity=\\"1\\"
-               transform=\\"translate(118.51451376600411,0)\\"
-            >
-              <line stroke=\\"#000\\"
-                    y2=\\"6\\"
-              >
-              </line>
-              <text fill=\\"#000\\"
-                    y=\\"9\\"
-                    dy=\\"0.71em\\"
-              >
-                12 PM
-              </text>
-            </g>
-            <g class=\\"tick\\"
-               opacity=\\"1\\"
-               transform=\\"translate(214.101798821209,0)\\"
+               transform=\\"translate(77.7036030439038,0)\\"
             >
               <line stroke=\\"#000\\"
                     y2=\\"6\\"
@@ -294,7 +234,37 @@ exports[`render update brush properties 1`] = `
             </g>
             <g class=\\"tick\\"
                opacity=\\"1\\"
-               transform=\\"translate(309.68908387641386,0)\\"
+               transform=\\"translate(141.4284605530994,0)\\"
+            >
+              <line stroke=\\"#000\\"
+                    y2=\\"6\\"
+              >
+              </line>
+              <text fill=\\"#000\\"
+                    y=\\"9\\"
+                    dy=\\"0.71em\\"
+              >
+                04 PM
+              </text>
+            </g>
+            <g class=\\"tick\\"
+               opacity=\\"1\\"
+               transform=\\"translate(205.15331806229497,0)\\"
+            >
+              <line stroke=\\"#000\\"
+                    y2=\\"6\\"
+              >
+              </line>
+              <text fill=\\"#000\\"
+                    y=\\"9\\"
+                    dy=\\"0.71em\\"
+              >
+                05 PM
+              </text>
+            </g>
+            <g class=\\"tick\\"
+               opacity=\\"1\\"
+               transform=\\"translate(268.8781755714906,0)\\"
             >
               <line stroke=\\"#000\\"
                     y2=\\"6\\"
@@ -309,7 +279,37 @@ exports[`render update brush properties 1`] = `
             </g>
             <g class=\\"tick\\"
                opacity=\\"1\\"
-               transform=\\"translate(405.2763689316188,0)\\"
+               transform=\\"translate(332.6030330806862,0)\\"
+            >
+              <line stroke=\\"#000\\"
+                    y2=\\"6\\"
+              >
+              </line>
+              <text fill=\\"#000\\"
+                    y=\\"9\\"
+                    dy=\\"0.71em\\"
+              >
+                07 PM
+              </text>
+            </g>
+            <g class=\\"tick\\"
+               opacity=\\"1\\"
+               transform=\\"translate(396.32789058988175,0)\\"
+            >
+              <line stroke=\\"#000\\"
+                    y2=\\"6\\"
+              >
+              </line>
+              <text fill=\\"#000\\"
+                    y=\\"9\\"
+                    dy=\\"0.71em\\"
+              >
+                08 PM
+              </text>
+            </g>
+            <g class=\\"tick\\"
+               opacity=\\"1\\"
+               transform=\\"translate(460.0527480990774,0)\\"
             >
               <line stroke=\\"#000\\"
                     y2=\\"6\\"
@@ -324,7 +324,37 @@ exports[`render update brush properties 1`] = `
             </g>
             <g class=\\"tick\\"
                opacity=\\"1\\"
-               transform=\\"translate(500.86365398682364,0)\\"
+               transform=\\"translate(523.777605608273,0)\\"
+            >
+              <line stroke=\\"#000\\"
+                    y2=\\"6\\"
+              >
+              </line>
+              <text fill=\\"#000\\"
+                    y=\\"9\\"
+                    dy=\\"0.71em\\"
+              >
+                10 PM
+              </text>
+            </g>
+            <g class=\\"tick\\"
+               opacity=\\"1\\"
+               transform=\\"translate(587.5024631174686,0)\\"
+            >
+              <line stroke=\\"#000\\"
+                    y2=\\"6\\"
+              >
+              </line>
+              <text fill=\\"#000\\"
+                    y=\\"9\\"
+                    dy=\\"0.71em\\"
+              >
+                11 PM
+              </text>
+            </g>
+            <g class=\\"tick\\"
+               opacity=\\"1\\"
+               transform=\\"translate(651.2273206266642,0)\\"
             >
               <line stroke=\\"#000\\"
                     y2=\\"6\\"
@@ -335,36 +365,6 @@ exports[`render update brush properties 1`] = `
                     dy=\\"0.71em\\"
               >
                 Jul 15
-              </text>
-            </g>
-            <g class=\\"tick\\"
-               opacity=\\"1\\"
-               transform=\\"translate(596.4509390420285,0)\\"
-            >
-              <line stroke=\\"#000\\"
-                    y2=\\"6\\"
-              >
-              </line>
-              <text fill=\\"#000\\"
-                    y=\\"9\\"
-                    dy=\\"0.71em\\"
-              >
-                03 AM
-              </text>
-            </g>
-            <g class=\\"tick\\"
-               opacity=\\"1\\"
-               transform=\\"translate(692.0382240972334,0)\\"
-            >
-              <line stroke=\\"#000\\"
-                    y2=\\"6\\"
-              >
-              </line>
-              <text fill=\\"#000\\"
-                    y=\\"9\\"
-                    dy=\\"0.71em\\"
-              >
-                06 AM
               </text>
             </g>
           </g>
@@ -412,43 +412,43 @@ exports[`render update brush properties 2`] = `
             >
             </rect>
             <path class=\\"line test\\"
-                  d=\\"M-28.387717862543663 0 L-28.387717862543663 380\\"
+                  d=\\"M-406.7754357250873 0 L-406.7754357250873 380\\"
             >
             </path>
             <path class=\\"line test\\"
-                  d=\\"M4.981898307418913 0 L4.981898307418913 380\\"
+                  d=\\"M-340.03620338516214 0 L-340.03620338516214 380\\"
             >
             </path>
             <path class=\\"line test\\"
-                  d=\\"M38.35151447738149 0 L38.35151447738149 380\\"
+                  d=\\"M-273.29697104523706 0 L-273.29697104523706 380\\"
             >
             </path>
             <path class=\\"line test\\"
-                  d=\\"M71.72113064734407 0 L71.72113064734407 380\\"
+                  d=\\"M-206.55773870531186 0 L-206.55773870531186 380\\"
             >
             </path>
             <path class=\\"line test\\"
-                  d=\\"M105.09074681730665 0 L105.09074681730665 380\\"
+                  d=\\"M-139.8185063653867 0 L-139.8185063653867 380\\"
             >
             </path>
             <path class=\\"line test\\"
-                  d=\\"M138.4603629872692 0 L138.4603629872692 380\\"
+                  d=\\"M-73.07927402546154 0 L-73.07927402546154 380\\"
             >
             </path>
             <path class=\\"line test\\"
-                  d=\\"M171.8299791572318 0 L171.8299791572318 380\\"
+                  d=\\"M-6.34004168553639 0 L-6.34004168553639 380\\"
             >
             </path>
             <path class=\\"line test\\"
-                  d=\\"M205.19959532719437 0 L205.19959532719437 380\\"
+                  d=\\"M60.39919065438876 0 L60.39919065438876 380\\"
             >
             </path>
             <path class=\\"line test\\"
-                  d=\\"M238.56921149715694 0 L238.56921149715694 380\\"
+                  d=\\"M127.13842299431393 0 L127.13842299431393 380\\"
             >
             </path>
             <path class=\\"line test\\"
-                  d=\\"M271.93882766711954 0 L271.93882766711954 380\\"
+                  d=\\"M193.87765533423908 0 L193.87765533423908 380\\"
             >
             </path>
             <path d=\\"M0 0 L0 380\\"
@@ -459,8 +459,8 @@ exports[`render update brush properties 2`] = `
             <svg y=\\"4\\"
                  height=\\"19\\"
                  class=\\"part interval\\"
-                 x=\\"0\\"
-                 width=\\"48.94210371594511\\"
+                 x=\\"-350\\"
+                 width=\\"97.88420743189025\\"
             >
               <rect width=\\"100%\\"
                     height=\\"100%\\"
@@ -497,8 +497,8 @@ exports[`render update brush properties 2`] = `
             <svg y=\\"4\\"
                  height=\\"19\\"
                  class=\\"part interval\\"
-                 x=\\"650.5017360145555\\"
-                 width=\\"49.49826398544451\\"
+                 x=\\"951.0034720291111\\"
+                 width=\\"98.9965279708889\\"
             >
               <rect width=\\"100%\\"
                     height=\\"100%\\"
@@ -535,8 +535,8 @@ exports[`render update brush properties 2`] = `
             <svg y=\\"4\\"
                  height=\\"19\\"
                  class=\\"part interval\\"
-                 x=\\"511.0095566872975\\"
-                 width=\\"15.016327276483253\\"
+                 x=\\"672.0191133745951\\"
+                 width=\\"30.032654552966278\\"
             >
               <rect width=\\"100%\\"
                     height=\\"100%\\"
@@ -573,8 +573,8 @@ exports[`render update brush properties 2`] = `
             <svg y=\\"4\\"
                  height=\\"19\\"
                  class=\\"part interval\\"
-                 x=\\"122.18801262748649\\"
-                 width=\\"34.481936708961356\\"
+                 x=\\"-105.623974745027\\"
+                 width=\\"68.96387341792266\\"
             >
               <rect width=\\"100%\\"
                     height=\\"100%\\"
@@ -608,51 +608,6 @@ exports[`render update brush properties 2`] = `
                 event 1
               </text>
             </svg>
-            <svg class=\\"x brush\\"
-                 fill=\\"none\\"
-                 pointer-events=\\"all\\"
-            >
-              <rect class=\\"overlay\\"
-                    pointer-events=\\"all\\"
-                    cursor=\\"crosshair\\"
-                    x=\\"0\\"
-                    y=\\"4\\"
-                    width=\\"700\\"
-                    height=\\"376\\"
-              >
-              </rect>
-              <rect class=\\"selection\\"
-                    cursor=\\"move\\"
-                    fill=\\"#777\\"
-                    fill-opacity=\\"0.3\\"
-                    stroke=\\"#fff\\"
-                    shape-rendering=\\"crispEdges\\"
-                    style
-                    y=\\"0\\"
-                    height=\\"380\\"
-                    x=\\"175\\"
-                    width=\\"350\\"
-              >
-              </rect>
-              <rect class=\\"handle handle--e\\"
-                    cursor=\\"ew-resize\\"
-                    style
-                    y=\\"-3\\"
-                    height=\\"386\\"
-                    x=\\"522\\"
-                    width=\\"6\\"
-              >
-              </rect>
-              <rect class=\\"handle handle--w\\"
-                    cursor=\\"ew-resize\\"
-                    style
-                    y=\\"-3\\"
-                    height=\\"386\\"
-                    x=\\"172\\"
-                    width=\\"6\\"
-              >
-              </rect>
-            </svg>
           </g>
           <g class=\\"axis\\"
              transform=\\"translate(0,380)\\"
@@ -668,7 +623,7 @@ exports[`render update brush properties 2`] = `
             </path>
             <g class=\\"tick\\"
                opacity=\\"1\\"
-               transform=\\"translate(72.22113064734407,0)\\"
+               transform=\\"translate(60.89919065438876,0)\\"
             >
               <line stroke=\\"#000\\"
                     y2=\\"6\\"
@@ -678,12 +633,12 @@ exports[`render update brush properties 2`] = `
                     y=\\"9\\"
                     dy=\\"0.71em\\"
               >
-                03 AM
+                07 AM
               </text>
             </g>
             <g class=\\"tick\\"
                opacity=\\"1\\"
-               transform=\\"translate(172.3299791572318,0)\\"
+               transform=\\"translate(127.63842299431393,0)\\"
             >
               <line stroke=\\"#000\\"
                     y2=\\"6\\"
@@ -693,12 +648,12 @@ exports[`render update brush properties 2`] = `
                     y=\\"9\\"
                     dy=\\"0.71em\\"
               >
-                06 AM
+                08 AM
               </text>
             </g>
             <g class=\\"tick\\"
                opacity=\\"1\\"
-               transform=\\"translate(272.43882766711954,0)\\"
+               transform=\\"translate(194.37765533423908,0)\\"
             >
               <line stroke=\\"#000\\"
                     y2=\\"6\\"
@@ -713,7 +668,37 @@ exports[`render update brush properties 2`] = `
             </g>
             <g class=\\"tick\\"
                opacity=\\"1\\"
-               transform=\\"translate(372.5476761770073,0)\\"
+               transform=\\"translate(261.1168876741642,0)\\"
+            >
+              <line stroke=\\"#000\\"
+                    y2=\\"6\\"
+              >
+              </line>
+              <text fill=\\"#000\\"
+                    y=\\"9\\"
+                    dy=\\"0.71em\\"
+              >
+                10 AM
+              </text>
+            </g>
+            <g class=\\"tick\\"
+               opacity=\\"1\\"
+               transform=\\"translate(327.85612001408936,0)\\"
+            >
+              <line stroke=\\"#000\\"
+                    y2=\\"6\\"
+              >
+              </line>
+              <text fill=\\"#000\\"
+                    y=\\"9\\"
+                    dy=\\"0.71em\\"
+              >
+                11 AM
+              </text>
+            </g>
+            <g class=\\"tick\\"
+               opacity=\\"1\\"
+               transform=\\"translate(394.5953523540146,0)\\"
             >
               <line stroke=\\"#000\\"
                     y2=\\"6\\"
@@ -728,7 +713,37 @@ exports[`render update brush properties 2`] = `
             </g>
             <g class=\\"tick\\"
                opacity=\\"1\\"
-               transform=\\"translate(472.656524686895,0)\\"
+               transform=\\"translate(461.3345846939397,0)\\"
+            >
+              <line stroke=\\"#000\\"
+                    y2=\\"6\\"
+              >
+              </line>
+              <text fill=\\"#000\\"
+                    y=\\"9\\"
+                    dy=\\"0.71em\\"
+              >
+                01 PM
+              </text>
+            </g>
+            <g class=\\"tick\\"
+               opacity=\\"1\\"
+               transform=\\"translate(528.0738170338649,0)\\"
+            >
+              <line stroke=\\"#000\\"
+                    y2=\\"6\\"
+              >
+              </line>
+              <text fill=\\"#000\\"
+                    y=\\"9\\"
+                    dy=\\"0.71em\\"
+              >
+                02 PM
+              </text>
+            </g>
+            <g class=\\"tick\\"
+               opacity=\\"1\\"
+               transform=\\"translate(594.81304937379,0)\\"
             >
               <line stroke=\\"#000\\"
                     y2=\\"6\\"
@@ -743,7 +758,7 @@ exports[`render update brush properties 2`] = `
             </g>
             <g class=\\"tick\\"
                opacity=\\"1\\"
-               transform=\\"translate(572.7653731967828,0)\\"
+               transform=\\"translate(661.5522817137152,0)\\"
             >
               <line stroke=\\"#000\\"
                     y2=\\"6\\"
@@ -753,22 +768,7 @@ exports[`render update brush properties 2`] = `
                     y=\\"9\\"
                     dy=\\"0.71em\\"
               >
-                06 PM
-              </text>
-            </g>
-            <g class=\\"tick\\"
-               opacity=\\"1\\"
-               transform=\\"translate(672.8742217066705,0)\\"
-            >
-              <line stroke=\\"#000\\"
-                    y2=\\"6\\"
-              >
-              </line>
-              <text fill=\\"#000\\"
-                    y=\\"9\\"
-                    dy=\\"0.71em\\"
-              >
-                09 PM
+                04 PM
               </text>
             </g>
           </g>
