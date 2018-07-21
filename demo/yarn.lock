@@ -5722,9 +5722,9 @@ react-scripts@1.1.4:
   optionalDependencies:
     fsevents "^1.1.3"
 
-react-timelinejs@^0.1.8:
-  version "0.1.8"
-  resolved "https://registry.yarnpkg.com/react-timelinejs/-/react-timelinejs-0.1.8.tgz#fefb7e690b49a05f607d81d71ae9caa0aab20e67"
+react-timelinejs@^0.1.12:
+  version "0.1.12"
+  resolved "https://registry.yarnpkg.com/react-timelinejs/-/react-timelinejs-0.1.12.tgz#925bb8bf43b5e26c764e415112ca5da28ca53b17"
 
 react@^16.4.1:
   version "16.4.1"

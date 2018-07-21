@@ -7,7 +7,7 @@
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-scripts": "1.1.4",
-    "react-timelinejs": "^0.1.8"
+    "react-timelinejs": "^0.1.12"
   },
   "scripts": {
     "start": "react-scripts start",

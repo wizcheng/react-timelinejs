@@ -86,7 +86,7 @@ export default class TimelineExample extends React.Component {
 
                 <Timeline data={this.state.data}
                           lines={this.state.lines}
-                          width={700} height={100}
+                          width={700} height={100} trackHeight={5}
                           label={false} tooltips={false}
                           brush={true} onBrush={this.handleBrush} brushRange={this.state.domain}/>
             </div>
