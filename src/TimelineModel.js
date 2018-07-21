@@ -289,7 +289,7 @@ const timeline = (domElement, overrideConfig) => {
         band.x = 0;
         band.y = bandY;
         band.w = width;
-        band.h = height - config.trackHeight;
+        band.h = height - 20;
         band.trackOffset = 4;
         // Prevent tracks from getting too high
         band.parts = [];
