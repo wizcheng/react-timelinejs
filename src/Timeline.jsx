@@ -1,7 +1,7 @@
 import React from 'react';
 import timeline from './TimelineModel';
 import './Timeline.css';
-import * as R from 'ramda';
+import equals from 'ramda/src/equals';
 import PropTypes from 'prop-types';
 
 const propTypes = {
@@ -49,8 +49,8 @@ class Timeline extends React.Component {
     }
 
     componentWillReceiveProps(nextProps, nextState) {
-        if (!R.equals(nextProps.data, this.props.data)
-                || !R.equals(nextProps.lines, this.props.lines)) {
+        if (!equals(nextProps.data, this.props.data)
+                || !equals(nextProps.lines, this.props.lines)) {
             this.timelineFn
                 .data(nextProps.data)
                 .lines(nextProps.lines)
@@ -59,10 +59,10 @@ class Timeline extends React.Component {
                 .updateBrushRange(nextProps.brushRange)
                 .redraw();
         }
-        if (!R.equals(nextProps.range, this.props.range)){
+        if (!equals(nextProps.range, this.props.range)){
             this.timelineFn.updateRange(nextProps.range);
         }
-        if (!R.equals(nextProps.brushRange, this.props.brushRange)){
+        if (!equals(nextProps.brushRange, this.props.brushRange)){
             this.timelineFn.updateBrushRange(nextProps.brushRange);
         }
     }

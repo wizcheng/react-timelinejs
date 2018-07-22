@@ -1,4 +1,6 @@
 src
 demo
 .babelrc
+.storybook
+stories
 webpack.config.js

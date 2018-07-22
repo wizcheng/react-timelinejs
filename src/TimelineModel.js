@@ -1,12 +1,10 @@
-import * as d3 from 'd3';
-import * as R from 'ramda';
-
-const defaultTo = (defaultValue, value) => {
-    if (value === null || typeof value === 'undefined') {
-        return defaultValue;
-    }
-    return value;
-};
+import defaultTo from 'ramda/src/defaultTo';
+import equals from 'ramda/src/equals';
+import {select, event, mouse} from 'd3-selection';
+import {axisBottom} from 'd3-axis';
+import {brushX} from 'd3-brush';
+import {scaleTime} from 'd3-scale';
+import {min, max} from 'd3-array';
 
 const defaultNoOps = fn => {
     return defaultTo(() => {
@@ -28,14 +26,6 @@ NodeList.prototype.remove = HTMLCollection.prototype.remove = function () {
 
 function format(date) {
     return date.toString();
-    // // bcString is the prefix or postfix for BC dates.
-    // // If bcString starts with '-' (minus),
-    // // if will be placed in front of the year.
-    // bcString = bcString || " BC" // With blank!
-    // var year = date.getUTCFullYear();
-    // if (year > 0) return year.toString();
-    // if (bcString[0] == '-') return bcString + (-year);
-    // return (-year) + bcString;
 }
 
 function getHtml(d, element) {
@@ -68,7 +58,7 @@ const timeline = (domElement, overrideConfig) => {
         onBrush: defaultNoOps(overrideConfig.onBrush),
         onMouseover: defaultNoOps(overrideConfig.onMouseover),
         onClick: defaultNoOps(overrideConfig.onClick),
-        tooltipContent: R.defaultTo(getHtml, overrideConfig.tooltipContent)
+        tooltipContent: defaultTo(getHtml, overrideConfig.tooltipContent)
     };
 
     // chart geometry
@@ -91,7 +81,7 @@ const timeline = (domElement, overrideConfig) => {
     ;     // Count of bands for ids
 
     // Create svg element
-    var svg = d3.select(domElement).append("svg")
+    var svg = select(domElement).append("svg")
         .attr("class", "svg")
         .attr("id", 'svg')
         .attr("width", outerWidth)
@@ -102,8 +92,8 @@ const timeline = (domElement, overrideConfig) => {
 
     function mousemove() {
         const band = bands['mainBand'];
-        const x = d3.mouse(this)[0];
-        const y = d3.mouse(this)[1];
+        const x = mouse(this)[0];
+        const y = mouse(this)[1];
         const mouseOverDate = band.xScale.invert(x);
         band.mousemove([mouseOverDate, 0]);
         config.onMouseover({date: mouseOverDate, x, y});
@@ -125,7 +115,7 @@ const timeline = (domElement, overrideConfig) => {
         .attr("class", "chart")
         .attr("clip-path", "url(#chart-area)" );
 
-    const tooltip = d3.select(domElement)
+    const tooltip = select(domElement)
         .append("div")
         .attr("class", "tooltip")
         .attr('id', tooltipId)
@@ -265,8 +255,8 @@ const timeline = (domElement, overrideConfig) => {
         calculateTracks(data.items, "descending", "backward");
         //calculateTracks(data.items, "ascending", "forward");
         data.nTracks = tracks.length;
-        data.minDate = d3.min(data.items, function (d) { return d.start; });
-        data.maxDate = d3.max(data.items, function (d) { return d.end; });
+        data.minDate = min(data.items, function (d) { return d.start; });
+        data.maxDate = max(data.items, function (d) { return d.end; });
 
         return timeline;
     };
@@ -297,7 +287,7 @@ const timeline = (domElement, overrideConfig) => {
 
         band.createOrUpdateXScale = () => {
             if (!band.xScale) {
-                band.xScale = d3.scaleTime()
+                band.xScale = scaleTime()
                     .range([0, band.w]);
             }
             band.xScale.domain([data.minDate, data.maxDate]);
@@ -602,15 +592,15 @@ const timeline = (domElement, overrideConfig) => {
 
         function showTooltip (d) {
 
-            var x = d3.event.pageX < band.x + band.w / 2
-                ? d3.event.pageX + 10
-                : d3.event.pageX - 110,
-                y = d3.event.pageY < band.y + band.h / 2
-                    ? d3.event.pageY + 30
-                    : d3.event.pageY - 30;
+            var x = event.pageX < band.x + band.w / 2
+                ? event.pageX + 10
+                : event.pageX - 110,
+                y = event.pageY < band.y + band.h / 2
+                    ? event.pageY + 30
+                    : event.pageY - 30;
 
             tooltip
-                .html(config.tooltipContent(d, d3.select(this)))
+                .html(config.tooltipContent(d, select(this)))
                 .style("top", y + "px")
                 .style("left", x + "px")
                 .style("visibility", "visible");
@@ -632,12 +622,7 @@ const timeline = (domElement, overrideConfig) => {
 
         var band = bands[bandName];
 
-        // var axis = d3.svg.axis()
-        //     .scale(band.xScale)
-        //     .orient(orientation || "bottom")
-        //     .tickSize(6, 0)
-        //     .tickFormat(function (d) { return toYear(d); });
-        const axis = d3.axisBottom(band.xScale);
+        const axis = axisBottom(band.xScale);
 
         var xAxis = chart.append("g")
             .attr("class", "axis")
@@ -672,11 +657,11 @@ const timeline = (domElement, overrideConfig) => {
 
         var band = bands[bandName];
 
-        const brush = d3.brushX()
+        const brush = brushX()
             .extent([[0, 0], [band.w, band.h]])
             .on("brush", function() {
-                const domain = d3.event.selection
-                    ? [band.xScale.invert(d3.event.selection[0]), band.xScale.invert(d3.event.selection[1])]
+                const domain = event.selection
+                    ? [band.xScale.invert(event.selection[0]), band.xScale.invert(event.selection[1])]
                     : band.xScale.domain();
 
                 // console.log('domain', domain);
@@ -722,7 +707,7 @@ const timeline = (domElement, overrideConfig) => {
 
         if (range) {
             const band = bands['mainBand'];
-            if (!R.equals(range, band.range)){
+            if (!equals(range, band.range)){
                 const start = band.xScale(range[0]);
                 const end = band.xScale(range[1]);
                 if (!isNaN(start) && !isNaN(end)) {
