@@ -55,7 +55,9 @@ const timeline = (domElement, overrideConfig) => {
         brush: defaultTo(false, overrideConfig.brush),
         brushRange: defaultTo(false, overrideConfig.brushRange),
         range: defaultTo(false, overrideConfig.range),
+        dataRange: defaultTo(null, overrideConfig.dataRange),
         onBrush: defaultNoOps(overrideConfig.onBrush),
+        onBrushEnd: defaultNoOps(overrideConfig.onBrushEnd),
         onMouseover: defaultNoOps(overrideConfig.onMouseover),
         onClick: defaultNoOps(overrideConfig.onClick),
         tooltipContent: defaultTo(getHtml, overrideConfig.tooltipContent)
@@ -255,8 +257,14 @@ const timeline = (domElement, overrideConfig) => {
         calculateTracks(data.items, "descending", "backward");
         //calculateTracks(data.items, "ascending", "forward");
         data.nTracks = tracks.length;
-        data.minDate = min(data.items, function (d) { return d.start; });
-        data.maxDate = max(data.items, function (d) { return d.end; });
+
+        if (config.dataRange) {
+            data.minDate = options.dataRange[0];
+            data.maxDate = options.dataRange[1];
+        } else {
+            data.minDate = min(data.items, function (d) { return d.start; });
+            data.maxDate = max(data.items, function (d) { return d.end; });
+        }
 
         return timeline;
     };
@@ -663,15 +671,16 @@ const timeline = (domElement, overrideConfig) => {
                 const domain = event.selection
                     ? [band.xScale.invert(event.selection[0]), band.xScale.invert(event.selection[1])]
                     : band.xScale.domain();
-
-                // console.log('domain', domain);
                 band.range = domain;
                 config.onBrush(domain);
-                // targetNames.forEach(function(d) {
-                //     bands[d].xScale.domain(domain);
-                //     bands[d].redraw();
-                // });
+            })
+            .on("end", function() {
+                const domain = event.selection
+                    ? [band.xScale.invert(event.selection[0]), band.xScale.invert(event.selection[1])]
+                    : band.xScale.domain();
+                config.onBrushEnd(domain);
             });
+
 
         band.brush = brush;
 

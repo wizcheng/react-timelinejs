@@ -49,8 +49,14 @@ class Timeline extends React.Component {
     }
 
     componentWillReceiveProps(nextProps, nextState) {
-        if (!equals(nextProps.data, this.props.data)
-                || !equals(nextProps.lines, this.props.lines)) {
+        let shouldUpdate = false;
+        if (nextProps.dataTime) {
+            shouldUpdate = !equals(nextProps.dataTime, this.props.dataTime)
+        } else {
+            shouldUpdate = !equals(nextProps.data, this.props.data)
+                || !equals(nextProps.lines, this.props.lines);
+        }
+        if (shouldUpdate) {
             this.timelineFn
                 .data(nextProps.data)
                 .lines(nextProps.lines)
@@ -58,20 +64,22 @@ class Timeline extends React.Component {
                 .updateRange(nextProps.range)
                 .updateBrushRange(nextProps.brushRange)
                 .redraw();
-        }
-        if (!equals(nextProps.range, this.props.range)){
-            this.timelineFn.updateRange(nextProps.range);
-        }
-        if (!equals(nextProps.brushRange, this.props.brushRange)){
-            this.timelineFn.updateBrushRange(nextProps.brushRange);
+        } else {
+            if (!equals(nextProps.range, this.props.range)){
+                this.timelineFn.updateRange(nextProps.range);
+            }
+            if (!equals(nextProps.brushRange, this.props.brushRange)){
+                this.timelineFn.updateBrushRange(nextProps.brushRange);
+            }
         }
     }
 
     createTimeline = () => {
 
-        const {data, dataKey, lines, height, width, trackHeight, label, tooltips, tooltipContent, brush, brushRange, onBrush, onMouseover, onClick, range} = this.props;
+        const {data, dataKey, dataRange, lines, height, width, trackHeight, label, tooltips, tooltipContent, brush, brushRange, onBrush, onBrushEnd, onMouseover, onClick, range} = this.props;
         const config = {
             dataKey,
+            dataRange,
             width,
             height,
             trackHeight,
@@ -82,6 +90,7 @@ class Timeline extends React.Component {
             brushRange,
             range,
             onBrush,
+            onBrushEnd,
             onMouseover,
             onClick
         };
