@@ -58,7 +58,7 @@ class Timeline extends React.Component {
         }
         if (shouldUpdate) {
             this.timelineFn
-                .data(nextProps.data)
+                .data(nextProps.data, nextProps.dataRange)
                 .lines(nextProps.lines)
                 .update()
                 .updateRange(nextProps.range)
@@ -94,7 +94,7 @@ class Timeline extends React.Component {
             onMouseover,
             onClick
         };
-        this.timelineFn = timeline(this.div, config).create(data, lines);
+        this.timelineFn = timeline(this.div, config).create(data, lines, dataRange);
         this.timelineFn.redraw();
     };
 

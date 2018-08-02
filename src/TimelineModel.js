@@ -134,7 +134,7 @@ const timeline = (domElement, overrideConfig) => {
         return timeline;
     };
 
-    timeline.data = function(items) {
+    timeline.data = function(items, dataRange) {
 
         var today = new Date(),
             tracks = [],
@@ -258,9 +258,9 @@ const timeline = (domElement, overrideConfig) => {
         //calculateTracks(data.items, "ascending", "forward");
         data.nTracks = tracks.length;
 
-        if (config.dataRange) {
-            data.minDate = config.dataRange[0];
-            data.maxDate = config.dataRange[1];
+        if (dataRange) {
+            data.minDate = dataRange[0];
+            data.maxDate = dataRange[1];
         } else {
             data.minDate = min(data.items, function (d) { return d.start; });
             data.maxDate = max(data.items, function (d) { return d.end; });
@@ -729,9 +729,9 @@ const timeline = (domElement, overrideConfig) => {
 
     };
 
-    timeline.create = (data, lines) => {
+    timeline.create = (data, lines, dataRange) => {
         timeline
-            .data(data)
+            .data(data, dataRange)
             .lines(lines)
             .band("mainBand")
             // .band("naviBand", 0.08)
