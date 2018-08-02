@@ -259,8 +259,8 @@ const timeline = (domElement, overrideConfig) => {
         data.nTracks = tracks.length;
 
         if (config.dataRange) {
-            data.minDate = options.dataRange[0];
-            data.maxDate = options.dataRange[1];
+            data.minDate = config.dataRange[0];
+            data.maxDate = config.dataRange[1];
         } else {
             data.minDate = min(data.items, function (d) { return d.start; });
             data.maxDate = max(data.items, function (d) { return d.end; });
