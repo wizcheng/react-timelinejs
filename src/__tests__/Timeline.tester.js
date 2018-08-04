@@ -21,7 +21,7 @@ export const mockLines = ({size = 10, date = moment('2018-07-14'), interval = 1}
     const results = [];
     for (let i = 0; i < size; i++) {
         results.push({
-            date: today.clone().add(i*interval, 'hours'),
+            date: today.clone().add(i*interval, 'hours').toDate(),
             className: 'test'
         });
     }
