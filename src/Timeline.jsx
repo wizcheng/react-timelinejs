@@ -41,42 +41,56 @@ class Timeline extends React.Component {
 
     componentDidMount() {
         this.key = Math.round(Math.random() * 100000).toFixed(0) + '-' + new Date().getTime();
-        this.createTimeline();
+        this.createTimeline(this.props);
     }
 
 
     componentDidUpdate() {
     }
 
+    componentWillUnmount() {
+        this.removeTimeline();
+    }
+
     componentWillReceiveProps(nextProps, nextState) {
-        let shouldUpdate = false;
-        if (nextProps.dataTime) {
-            shouldUpdate = !equals(nextProps.dataTime, this.props.dataTime)
+        if (!equals(this.props.width, nextProps.width)
+                || !equals(this.props.height, nextProps.height)) {
+            this.removeTimeline();
+            this.createTimeline(nextProps);
         } else {
-            shouldUpdate = !equals(nextProps.data, this.props.data)
-                || !equals(nextProps.lines, this.props.lines);
-        }
-        if (shouldUpdate) {
-            this.timelineFn
-                .data(nextProps.data, nextProps.dataRange)
-                .lines(nextProps.lines)
-                .update()
-                .updateRange(nextProps.range)
-                .updateBrushRange(nextProps.brushRange)
-                .redraw();
-        } else {
-            if (!equals(nextProps.range, this.props.range)){
-                this.timelineFn.updateRange(nextProps.range);
+            let shouldUpdate = false;
+            if (nextProps.dataTime) {
+                shouldUpdate = !equals(nextProps.dataTime, this.props.dataTime)
+            } else {
+                shouldUpdate = !equals(nextProps.data, this.props.data)
+                    || !equals(nextProps.lines, this.props.lines);
             }
-            if (!equals(nextProps.brushRange, this.props.brushRange)){
-                this.timelineFn.updateBrushRange(nextProps.brushRange);
+            if (shouldUpdate) {
+                this.timelineFn
+                    .data(nextProps.data, nextProps.dataRange)
+                    .lines(nextProps.lines)
+                    .update()
+                    .updateRange(nextProps.range)
+                    .updateBrushRange(nextProps.brushRange)
+                    .redraw();
+            } else {
+                if (!equals(nextProps.range, this.props.range)){
+                    this.timelineFn.updateRange(nextProps.range);
+                }
+                if (!equals(nextProps.brushRange, this.props.brushRange)){
+                    this.timelineFn.updateBrushRange(nextProps.brushRange);
+                }
             }
         }
     }
 
-    createTimeline = () => {
+    removeTimeline = () => {
+        this.timelineFn.destroy()
+    };
 
-        const {data, dataKey, dataRange, lines, height, width, trackHeight, label, tooltips, tooltipContent, brush, brushRange, onBrush, onBrushEnd, onMouseover, onClick, range} = this.props;
+    createTimeline = (props) => {
+
+        const {data, dataKey, dataRange, lines, height, width, trackHeight, label, tooltips, tooltipContent, brush, brushRange, onBrush, onBrushEnd, onMouseover, onClick, range} = props;
         const config = {
             dataKey,
             dataRange,

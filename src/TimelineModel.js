@@ -124,6 +124,16 @@ const timeline = (domElement, overrideConfig) => {
         .style("visibility", "hidden");
 
 
+    timeline.destroy = () => {
+        const remove = selector => {
+            const el = document.querySelector(selector);
+            el.parentNode.removeChild(el);
+        };
+
+        remove('#svg');
+        remove('#tooltip');
+    };
+
     //--------------------------------------------------------------------------
     //
     // data

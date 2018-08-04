@@ -6,6 +6,7 @@ import Timeline from '../src/Timeline';
 import {mockData, mockLines} from "../src/__tests__/Timeline.tester";
 import StoryWithBrush from './story_with_brush';
 import './story.css';
+import StoryWithProps from "./story_with_props";
 
 storiesOf('Timeline', module)
     .add('basic', () => <Timeline data={mockData({size: 30, breakdown: false})} width={500} height={300}/>)
@@ -38,4 +39,5 @@ storiesOf('Timeline', module)
     .add('interactive 1000 events', () => <StoryWithBrush dataSize={1000}/>)
     .add('interactive timeline, with default', () => <StoryWithBrush defaultRange={true}/>)
     .add('update with property change', () => <StoryWithBrush showButton={true}/>)
+    .add('update with size', () => <StoryWithProps/>)
 ;
