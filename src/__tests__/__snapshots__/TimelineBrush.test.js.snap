@@ -4,7 +4,7 @@ exports[`render with brush 1`] = `
 "
 <div>
   <svg class=\\"svg\\"
-       id=\\"svg\\"
+       id=\\"svg-49570-1534505013500\\"
        width=\\"700\\"
        height=\\"400\\"
   >
@@ -328,7 +328,7 @@ exports[`render with brush 1`] = `
     </g>
   </svg>
   <div class=\\"tooltip\\"
-       id=\\"tooltip\\"
+       id=\\"tooltip-49570-1534505013500\\"
        style=\\"visibility: hidden;\\"
   >
   </div>

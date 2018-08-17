@@ -106,7 +106,8 @@ class Timeline extends React.Component {
             onBrush,
             onBrushEnd,
             onMouseover,
-            onClick
+            onClick,
+            id: Math.round(Math.random() * 100000).toFixed(0) + '-' + new Date().getTime()
         };
         this.timelineFn = timeline(this.div, config).create(data, lines, dataRange);
         this.timelineFn.redraw();

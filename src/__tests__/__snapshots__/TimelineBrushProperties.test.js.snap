@@ -8,7 +8,7 @@ exports[`render update brush properties 1`] = `
   </button>
   <div>
     <svg class=\\"svg\\"
-         id=\\"svg\\"
+         id=\\"svg-95901-1534505013966\\"
          width=\\"700\\"
          height=\\"400\\"
     >
@@ -372,7 +372,7 @@ exports[`render update brush properties 1`] = `
       </g>
     </svg>
     <div class=\\"tooltip\\"
-         id=\\"tooltip\\"
+         id=\\"tooltip-95901-1534505013966\\"
          style=\\"visibility: hidden;\\"
     >
     </div>
@@ -389,7 +389,7 @@ exports[`render update brush properties 2`] = `
   </button>
   <div>
     <svg class=\\"svg\\"
-         id=\\"svg\\"
+         id=\\"svg-95901-1534505013966\\"
          width=\\"700\\"
          height=\\"400\\"
     >
@@ -776,7 +776,7 @@ exports[`render update brush properties 2`] = `
       </g>
     </svg>
     <div class=\\"tooltip\\"
-         id=\\"tooltip\\"
+         id=\\"tooltip-95901-1534505013966\\"
          style=\\"visibility: hidden;\\"
     >
     </div>

@@ -51,12 +51,21 @@ export default class StoryWithProps extends React.Component {
         return (
             <div style={{overflow: 'hidden'}}>
                 <ReactResizeDetector handleWidth handleHeight>
-                    {(width, height) => <Timeline data={this.state.data}
-                                                  dataKey='key'
-                                                  lines={this.state.lines}
-                                                  width={width} height={400}
-                                                  range={this.state.domain}
-                                                  onMouseover={val => {}}/>}
+                    {(width, height) => <div>
+                        <Timeline data={this.state.data}
+                                  dataKey='key'
+                                  lines={this.state.lines}
+                                  width={width} height={400}
+                                  range={this.state.domain}
+                                  onMouseover={val => {}}/>
+
+                        <Timeline data={this.state.data}
+                                  dataKey='key'
+                                  lines={this.state.lines}
+                                  width={width} height={100}
+                                  range={this.state.domain}
+                                  onMouseover={val => {}}/>
+                    </div>}
                 </ReactResizeDetector>
             </div>
         );

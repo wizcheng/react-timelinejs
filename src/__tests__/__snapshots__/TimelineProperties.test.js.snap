@@ -8,7 +8,7 @@ exports[`render update data properties 1`] = `
   </button>
   <div>
     <svg class=\\"svg\\"
-         id=\\"svg\\"
+         id=\\"svg-56266-1534505013991\\"
          width=\\"700\\"
          height=\\"400\\"
     >
@@ -372,7 +372,7 @@ exports[`render update data properties 1`] = `
       </g>
     </svg>
     <div class=\\"tooltip\\"
-         id=\\"tooltip\\"
+         id=\\"tooltip-56266-1534505013991\\"
          style=\\"visibility: hidden;\\"
     >
     </div>
@@ -389,7 +389,7 @@ exports[`render update data properties 2`] = `
   </button>
   <div>
     <svg class=\\"svg\\"
-         id=\\"svg\\"
+         id=\\"svg-56266-1534505013991\\"
          width=\\"700\\"
          height=\\"400\\"
     >
@@ -776,7 +776,7 @@ exports[`render update data properties 2`] = `
       </g>
     </svg>
     <div class=\\"tooltip\\"
-         id=\\"tooltip\\"
+         id=\\"tooltip-56266-1534505013991\\"
          style=\\"visibility: hidden;\\"
     >
     </div>

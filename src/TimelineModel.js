@@ -60,7 +60,8 @@ const timeline = (domElement, overrideConfig) => {
         onBrushEnd: defaultNoOps(overrideConfig.onBrushEnd),
         onMouseover: defaultNoOps(overrideConfig.onMouseover),
         onClick: defaultNoOps(overrideConfig.onClick),
-        tooltipContent: defaultTo(getHtml, overrideConfig.tooltipContent)
+        tooltipContent: defaultTo(getHtml, overrideConfig.tooltipContent),
+        id: overrideConfig.id
     };
 
     // chart geometry
@@ -79,13 +80,14 @@ const timeline = (domElement, overrideConfig) => {
         bandY = 0,       // Y-Position of the next band
         bandNum = 0,
         // id = `${new Date().getTime()}-${Math.random() * 100000}`,
-        tooltipId = `tooltip`
+        tooltipId = `tooltip-${config.id}`,
+        svgId = `svg-${config.id}`
     ;     // Count of bands for ids
 
     // Create svg element
     var svg = select(domElement).append("svg")
         .attr("class", "svg")
-        .attr("id", 'svg')
+        .attr("id", svgId)
         .attr("width", outerWidth)
         .attr("height", outerHeight)
         .append("g")
@@ -130,8 +132,8 @@ const timeline = (domElement, overrideConfig) => {
             el.parentNode.removeChild(el);
         };
 
-        remove('#svg');
-        remove('#tooltip');
+        remove(`#${svgId}`);
+        remove(`#${tooltipId}`);
     };
 
     //--------------------------------------------------------------------------
