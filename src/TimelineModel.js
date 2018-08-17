@@ -234,7 +234,14 @@ const timeline = (domElement, overrideConfig) => {
         // Convert yearStrings into dates
         data.items.forEach(function (item){
 
-            const steps = item.steps;
+            const steps = item.steps.filter(step => {
+                const valid = step.start && step.end && step.end.getTime() >= step.start.getTime();
+                if (!valid){
+                    console.log(`Invalid item, end should <= start: ${step}`);
+                }
+                return valid;
+            });
+            item.steps = steps;
 
             const start = item.start.getTime();
             const end = item.end.getTime();
