@@ -151,7 +151,13 @@ const timeline = (domElement, overrideConfig) => {
             yearMillis = 31622400000,
             instantOffset = 100 * yearMillis;
 
-        data.items = items;
+        data.items = items.filter(item => {
+            const valid = item.start && item.end && item.end.getTime() >= item.start.getTime();
+            if (!valid) {
+                console.log(`Invalid item, end should <= start: ${item}`);
+            }
+            return valid;
+        });
 
         function showItems(n) {
             var count = 0, n = n || 10;
