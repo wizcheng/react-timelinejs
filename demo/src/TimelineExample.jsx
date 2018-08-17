@@ -80,13 +80,19 @@ export default class TimelineExample extends React.Component {
             <div>
                 <Timeline data={this.state.data}
                           lines={this.state.lines}
-                          width={700} height={400}
+                          width={700} height={300}
                           range={this.state.domain}
                           onMouseover={val => console.log(val)}/>
 
                 <Timeline data={this.state.data}
                           lines={this.state.lines}
-                          width={700} height={100} trackHeight={5}
+                          width={700} height={150}
+                          range={this.state.domain}
+                          onMouseover={val => console.log(val)}/>
+
+                <Timeline data={this.state.data}
+                          lines={this.state.lines}
+                          width={700} height={80} trackHeight={5}
                           label={false} tooltips={false}
                           brush={true} onBrush={this.handleBrush} brushRange={this.state.domain}/>
             </div>
