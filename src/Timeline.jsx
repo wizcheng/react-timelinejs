@@ -2,6 +2,7 @@ import React from 'react';
 import timeline from './TimelineModel';
 import './Timeline.css';
 import equals from 'ramda/src/equals';
+import defaultTo from 'ramda/src/defaultTo';
 import PropTypes from 'prop-types';
 
 const propTypes = {
@@ -90,7 +91,7 @@ class Timeline extends React.Component {
 
     createTimeline = (props) => {
 
-        const {data, dataKey, dataRange, lines, height, width, trackHeight, label, tooltips, tooltipContent, brush, brushRange, onBrush, onBrushEnd, onMouseover, onClick, range} = props;
+        const {id, data, dataKey, dataRange, lines, height, width, trackHeight, label, tooltips, tooltipContent, brush, brushRange, onBrush, onBrushEnd, onMouseover, onClick, range} = props;
         const config = {
             dataKey,
             dataRange,
@@ -107,7 +108,7 @@ class Timeline extends React.Component {
             onBrushEnd,
             onMouseover,
             onClick,
-            id: Math.round(Math.random() * 100000).toFixed(0) + '-' + new Date().getTime()
+            id: defaultTo(Math.round(Math.random() * 100000).toFixed(0) + '-' + new Date().getTime(), id)
         };
         this.timelineFn = timeline(this.div, config).create(data, lines, dataRange);
         this.timelineFn.redraw();

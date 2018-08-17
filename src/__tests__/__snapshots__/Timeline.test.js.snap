@@ -4,7 +4,7 @@ exports[`render empty timeline 1`] = `
 "
 <div>
   <svg class=\\"svg\\"
-       id=\\"svg-7915-1534505013492\\"
+       id=\\"svg-1\\"
        width=\\"700\\"
        height=\\"400\\"
   >
@@ -49,7 +49,7 @@ exports[`render empty timeline 1`] = `
     </g>
   </svg>
   <div class=\\"tooltip\\"
-       id=\\"tooltip-7915-1534505013492\\"
+       id=\\"tooltip-1\\"
        style=\\"visibility: hidden;\\"
   >
   </div>
@@ -61,7 +61,7 @@ exports[`render with custom track height 1`] = `
 "
 <div>
   <svg class=\\"svg\\"
-       id=\\"svg-34507-1534505013682\\"
+       id=\\"svg-1\\"
        width=\\"700\\"
        height=\\"400\\"
   >
@@ -325,7 +325,7 @@ exports[`render with custom track height 1`] = `
     </g>
   </svg>
   <div class=\\"tooltip\\"
-       id=\\"tooltip-34507-1534505013682\\"
+       id=\\"tooltip-1\\"
        style=\\"visibility: hidden;\\"
   >
   </div>
@@ -337,7 +337,7 @@ exports[`render with lines 1`] = `
 "
 <div>
   <svg class=\\"svg\\"
-       id=\\"svg-17605-1534505013597\\"
+       id=\\"svg-1\\"
        width=\\"700\\"
        height=\\"400\\"
   >
@@ -776,7 +776,7 @@ exports[`render with lines 1`] = `
     </g>
   </svg>
   <div class=\\"tooltip\\"
-       id=\\"tooltip-17605-1534505013597\\"
+       id=\\"tooltip-1\\"
        style=\\"visibility: hidden;\\"
   >
   </div>
@@ -788,7 +788,7 @@ exports[`render with sample data 1`] = `
 "
 <div>
   <svg class=\\"svg\\"
-       id=\\"svg-41639-1534505013559\\"
+       id=\\"svg-1\\"
        width=\\"700\\"
        height=\\"400\\"
   >
@@ -1067,7 +1067,7 @@ exports[`render with sample data 1`] = `
     </g>
   </svg>
   <div class=\\"tooltip\\"
-       id=\\"tooltip-41639-1534505013559\\"
+       id=\\"tooltip-1\\"
        style=\\"visibility: hidden;\\"
   >
   </div>
@@ -1079,7 +1079,7 @@ exports[`render without label 1`] = `
 "
 <div>
   <svg class=\\"svg\\"
-       id=\\"svg-69464-1534505013650\\"
+       id=\\"svg-1\\"
        width=\\"700\\"
        height=\\"400\\"
   >
@@ -1400,7 +1400,7 @@ exports[`render without label 1`] = `
     </g>
   </svg>
   <div class=\\"tooltip\\"
-       id=\\"tooltip-69464-1534505013650\\"
+       id=\\"tooltip-1\\"
        style=\\"visibility: hidden;\\"
   >
   </div>

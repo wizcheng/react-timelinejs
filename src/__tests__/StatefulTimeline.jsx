@@ -29,7 +29,7 @@ export class StatefulTimeline extends React.Component {
         return (
             <div>
                 <button id='update-mock-data' onClick={this.updateMockData}>generate</button>
-                <Timeline data={data} dataKey='key' lines={lines} range={range}/>
+                <Timeline id={'1'} data={data} dataKey='key' lines={lines} range={range}/>
             </div>
         )
     }

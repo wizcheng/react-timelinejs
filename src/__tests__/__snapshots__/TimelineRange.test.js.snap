@@ -4,7 +4,7 @@ exports[`render with range 1`] = `
 "
 <div>
   <svg class=\\"svg\\"
-       id=\\"svg-21025-1534505013513\\"
+       id=\\"svg-1\\"
        width=\\"700\\"
        height=\\"400\\"
   >
@@ -368,7 +368,7 @@ exports[`render with range 1`] = `
     </g>
   </svg>
   <div class=\\"tooltip\\"
-       id=\\"tooltip-21025-1534505013513\\"
+       id=\\"tooltip-1\\"
        style=\\"visibility: hidden;\\"
   >
   </div>
