@@ -520,9 +520,25 @@ const timeline = (domElement, overrideConfig) => {
 
         band.redraw = function () {
             band.items
-                .attr("x", function (d) { return band.xScale(d.start);})
+                .attr("x", function (d) {
+                    const x = band.xScale(d.start);
+                    const y = band.xScale(d.end);
+                    const hidden = y < 0 || x > band.w;
+                    return hidden ? -1000 : x;
+                })
                 .attr("width", function (d) {
-                    return band.xScale(d.end) - band.xScale(d.start); });
+                    const x = band.xScale(d.start);
+                    const y = band.xScale(d.end);
+                    const hidden = y < 0 || x > band.w;
+                    return hidden ? 0 : y - x; })
+                .style('display', (d) => {
+                    const x = band.xScale(d.start);
+                    const y = band.xScale(d.end);
+                    const hidden = y < 0 || x > band.w;
+                    return hidden ? 'none' : null;
+                })
+            ;
+
 
             band.lines
                 .attr('d', d => {
