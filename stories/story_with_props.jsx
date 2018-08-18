@@ -55,7 +55,7 @@ export default class StoryWithProps extends React.Component {
                         <Timeline data={this.state.data}
                                   dataKey='key'
                                   lines={this.state.lines}
-                                  width={width} height={400}
+                                  width={width} height={250}
                                   range={this.state.domain}
                                   onMouseover={val => {}}/>
 

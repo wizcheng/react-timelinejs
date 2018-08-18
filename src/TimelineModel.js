@@ -5,6 +5,7 @@ import {axisBottom} from 'd3-axis';
 import {brushX} from 'd3-brush';
 import {scaleTime} from 'd3-scale';
 import {min, max} from 'd3-array';
+import moment from 'moment';
 
 const defaultNoOps = fn => {
     return defaultTo(() => {
@@ -382,6 +383,25 @@ const timeline = (domElement, overrideConfig) => {
             .style('display', 'none')
         ;
 
+        const mouseoverRectWidth = 75;
+        const mouseoverRectHeight = 16;
+        const mouseoverRect = band.g.append('rect')
+            .attr('height', mouseoverRectHeight)
+            .attr('width', mouseoverRectWidth)
+            .attr('y', band.h - mouseoverRectHeight)
+            .attr('class', 'mouseover-label-background')
+            .style('display', 'none')
+        ;
+
+        const mouseoverText = band.g.append('text')
+            // .attr('d', `M0 0 L0 ${band.h}`)
+            .attr('x', 0)
+            .attr('y', band.h - 4)
+            .attr('class', 'mouseover-label')
+            .text('')
+            .style('display', 'none')
+        ;
+
 
         band.createOrUpdateInterval = () => {
 
@@ -512,20 +532,28 @@ const timeline = (domElement, overrideConfig) => {
 
             band.parts.forEach(function(part) { part.redraw(); })
 
-            // mouseoverLine
-            //     .attr("x", function (d) { return band.xScale(band.mouseoverPos[0]);})
         };
 
         band.mousemove = (xy) => {
             const x = band.xScale(xy[0]);
             mouseoverLine
                 .attr('d', `M${x} 0 L${x} ${band.h}`);
+            mouseoverText
+                .attr('x', x)
+                .text(moment(xy[0]).format('Do, HH:mm:ss'))
+            ;
+            mouseoverRect
+                .attr('x', x - mouseoverRectWidth/2);
         };
         band.mouseout = () => {
             mouseoverLine.style('display', 'none');
+            mouseoverText.style('display', 'none');
+            mouseoverRect.style('display', 'none');
         };
         band.mouseover = () => {
             mouseoverLine.style('display', null);
+            mouseoverText.style('display', null);
+            mouseoverRect.style('display', null);
         };
 
 

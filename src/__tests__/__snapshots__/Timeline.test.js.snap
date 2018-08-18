@@ -31,6 +31,19 @@ exports[`render empty timeline 1`] = `
                 style=\\"display: none;\\"
           >
           </path>
+          <rect height=\\"16\\"
+                width=\\"75\\"
+                y=\\"364\\"
+                class=\\"mouseover-label-background\\"
+                style=\\"display: none;\\"
+          >
+          </rect>
+          <text x=\\"0\\"
+                y=\\"376\\"
+                class=\\"mouseover-label\\"
+                style=\\"display: none;\\"
+          >
+          </text>
         </g>
         <g class=\\"axis\\"
            transform=\\"translate(0,380)\\"
@@ -88,6 +101,19 @@ exports[`render with custom track height 1`] = `
                 style=\\"display: none;\\"
           >
           </path>
+          <rect height=\\"16\\"
+                width=\\"75\\"
+                y=\\"364\\"
+                class=\\"mouseover-label-background\\"
+                style=\\"display: none;\\"
+          >
+          </rect>
+          <text x=\\"0\\"
+                y=\\"376\\"
+                class=\\"mouseover-label\\"
+                style=\\"display: none;\\"
+          >
+          </text>
           <svg y=\\"4\\"
                height=\\"39\\"
                class=\\"part interval\\"
@@ -404,6 +430,19 @@ exports[`render with lines 1`] = `
                 style=\\"display: none;\\"
           >
           </path>
+          <rect height=\\"16\\"
+                width=\\"75\\"
+                y=\\"364\\"
+                class=\\"mouseover-label-background\\"
+                style=\\"display: none;\\"
+          >
+          </rect>
+          <text x=\\"0\\"
+                y=\\"376\\"
+                class=\\"mouseover-label\\"
+                style=\\"display: none;\\"
+          >
+          </text>
           <svg y=\\"4\\"
                height=\\"19\\"
                class=\\"part interval\\"
@@ -815,6 +854,19 @@ exports[`render with sample data 1`] = `
                 style=\\"display: none;\\"
           >
           </path>
+          <rect height=\\"16\\"
+                width=\\"75\\"
+                y=\\"364\\"
+                class=\\"mouseover-label-background\\"
+                style=\\"display: none;\\"
+          >
+          </rect>
+          <text x=\\"0\\"
+                y=\\"376\\"
+                class=\\"mouseover-label\\"
+                style=\\"display: none;\\"
+          >
+          </text>
           <svg y=\\"4\\"
                height=\\"19\\"
                class=\\"part interval\\"
@@ -1106,6 +1158,19 @@ exports[`render without label 1`] = `
                 style=\\"display: none;\\"
           >
           </path>
+          <rect height=\\"16\\"
+                width=\\"75\\"
+                y=\\"364\\"
+                class=\\"mouseover-label-background\\"
+                style=\\"display: none;\\"
+          >
+          </rect>
+          <text x=\\"0\\"
+                y=\\"376\\"
+                class=\\"mouseover-label\\"
+                style=\\"display: none;\\"
+          >
+          </text>
           <svg y=\\"4\\"
                height=\\"19\\"
                class=\\"part interval\\"

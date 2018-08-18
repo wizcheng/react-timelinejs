@@ -109,5 +109,16 @@
 }
 
 .mouseover-line {
-    stroke: red;
+    stroke: #0984e3;
+}
+
+.mouseover-label {
+    fill : white;
+    font: 10px sans-serif;
+    shape-rendering: crispEdges;
+    text-anchor: middle;
+}
+
+.mouseover-label-background {
+    fill: #0984e3;
 }
