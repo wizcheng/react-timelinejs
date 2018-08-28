@@ -2,7 +2,7 @@
 
 exports[`render empty timeline 1`] = `
 "
-<div>
+<div class=\\"timeline\\">
   <svg class=\\"svg\\"
        id=\\"svg-1\\"
        width=\\"700\\"
@@ -72,7 +72,7 @@ exports[`render empty timeline 1`] = `
 
 exports[`render with custom track height 1`] = `
 "
-<div>
+<div class=\\"timeline\\">
   <svg class=\\"svg\\"
        id=\\"svg-1\\"
        width=\\"700\\"
@@ -361,7 +361,7 @@ exports[`render with custom track height 1`] = `
 
 exports[`render with lines 1`] = `
 "
-<div>
+<div class=\\"timeline\\">
   <svg class=\\"svg\\"
        id=\\"svg-1\\"
        width=\\"700\\"
@@ -825,7 +825,7 @@ exports[`render with lines 1`] = `
 
 exports[`render with sample data 1`] = `
 "
-<div>
+<div class=\\"timeline\\">
   <svg class=\\"svg\\"
        id=\\"svg-1\\"
        width=\\"700\\"
@@ -1129,7 +1129,7 @@ exports[`render with sample data 1`] = `
 
 exports[`render without label 1`] = `
 "
-<div>
+<div class=\\"timeline\\">
   <svg class=\\"svg\\"
        id=\\"svg-1\\"
        width=\\"700\\"

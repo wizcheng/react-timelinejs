@@ -2,7 +2,7 @@
 
 exports[`render with brush 1`] = `
 "
-<div>
+<div class=\\"timeline\\">
   <svg class=\\"svg\\"
        id=\\"svg-1\\"
        width=\\"700\\"

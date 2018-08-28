@@ -20,6 +20,10 @@
 
 /* timeline band */
 
+.timeline {
+    position: relative;
+}
+
 .band { /* band background */
     fill: #FAFAFA;
 }
@@ -98,6 +102,7 @@
 .tooltip {
     width: auto;
     position: absolute;
+    z-index: 2;
     visibility: hidden;
     color : black;
     cursor:default;

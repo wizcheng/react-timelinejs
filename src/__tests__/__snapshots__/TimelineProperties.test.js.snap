@@ -6,7 +6,7 @@ exports[`render update data properties 1`] = `
   <button id=\\"update-mock-data\\">
     generate
   </button>
-  <div>
+  <div class=\\"timeline\\">
     <svg class=\\"svg\\"
          id=\\"svg-1\\"
          width=\\"700\\"
@@ -403,7 +403,7 @@ exports[`render update data properties 2`] = `
   <button id=\\"update-mock-data\\">
     generate
   </button>
-  <div>
+  <div class=\\"timeline\\">
     <svg class=\\"svg\\"
          id=\\"svg-1\\"
          width=\\"700\\"

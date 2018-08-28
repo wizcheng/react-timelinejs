@@ -587,69 +587,72 @@ const timeline = (domElement, overrideConfig) => {
     // labels
     //
 
-    timeline.labels = function (bandName) {
-
-        var band = bands[bandName],
-            labelWidth = 46,
-            labelHeight = 20,
-            labelTop = band.y + band.h - 10,
-            y = band.y + band.h + 1,
-            yText = 15;
-
-        var labelDefs = [
-            ["start", "bandMinMaxLabel", 0, 4,
-                function(min, max) { return format(min); },
-                "Start of the selected interval", band.x + 30, labelTop],
-            ["end", "bandMinMaxLabel", band.w - labelWidth, band.w - 4,
-                function(min, max) { return format(max); },
-                "End of the selected interval", band.x + band.w - 152, labelTop],
-            ["middle", "bandMidLabel", (band.w - labelWidth) / 2, band.w / 2,
-                function(min, max) { return max.getUTCFullYear() - min.getUTCFullYear(); },
-                "Length of the selected interval", band.x + band.w / 2 - 75, labelTop]
-        ];
-
-        var bandLabels = chart.append("g")
-            .attr("id", bandName + "Labels")
-            .attr("transform", "translate(0," + (band.y + band.h + 1) +  ")")
-            .selectAll("#" + bandName + "Labels")
-            .data(labelDefs)
-            .enter().append("g")
-            .on("mouseover", function(d) {
-                tooltip.html(d[5])
-                    .style("top", d[7] + "px")
-                    .style("left", d[6] + "px")
-                    .style("visibility", "visible");
-            })
-            .on("mouseout", function(){
-                tooltip.style("visibility", "hidden");
-            });
-
-        bandLabels.append("rect")
-            .attr("class", "bandLabel")
-            .attr("x", function(d) { return d[2];})
-            .attr("width", labelWidth)
-            .attr("height", labelHeight)
-            .style("opacity", 1);
-
-        var labels = bandLabels.append("text")
-            .attr("class", function(d) { return d[1];})
-            .attr("id", function(d) { return d[0];})
-            .attr("x", function(d) { return d[3];})
-            .attr("y", yText)
-            .attr("text-anchor", function(d) { return d[0];});
-
-        labels.redraw = function () {
-            var min = band.xScale.domain()[0],
-                max = band.xScale.domain()[1];
-
-            labels.text(function (d) { return d[4](min, max); })
-        };
-
-        band.parts.push(labels);
-        components.push(labels);
-
-        return timeline;
-    };
+    // timeline.labels = function (bandName) {
+    //
+    //     var band = bands[bandName],
+    //         labelWidth = 46,
+    //         labelHeight = 20,
+    //         labelTop = band.y + band.h - 10,
+    //         y = band.y + band.h + 1,
+    //         yText = 15;
+    //
+    //     var labelDefs = [
+    //         ["start", "bandMinMaxLabel", 0, 4,
+    //             function(min, max) { return format(min); },
+    //             "Start of the selected interval", band.x + 30, labelTop],
+    //         ["end", "bandMinMaxLabel", band.w - labelWidth, band.w - 4,
+    //             function(min, max) { return format(max); },
+    //             "End of the selected interval", band.x + band.w - 152, labelTop],
+    //         ["middle", "bandMidLabel", (band.w - labelWidth) / 2, band.w / 2,
+    //             function(min, max) { return max.getUTCFullYear() - min.getUTCFullYear(); },
+    //             "Length of the selected interval", band.x + band.w / 2 - 75, labelTop]
+    //     ];
+    //
+    //     var bandLabels = chart.append("g")
+    //         .attr("id", bandName + "Labels")
+    //         .attr("transform", "translate(0," + (band.y + band.h + 1) +  ")")
+    //         .selectAll("#" + bandName + "Labels")
+    //         .data(labelDefs)
+    //         .enter().append("g")
+    //         .on("mouseover", function(d) {
+    //             tooltip.html(d[5])
+    //                 .style("visibility", "visible");
+    //         })
+    //         .on("mousemove", function(d) {
+    //             tooltip
+    //                 .style("top", d[7] + "px")
+    //                 .style("left", d[6] + "px")
+    //         })
+    //         .on("mouseout", function(){
+    //             tooltip.style("visibility", "hidden");
+    //         });
+    //
+    //     bandLabels.append("rect")
+    //         .attr("class", "bandLabel")
+    //         .attr("x", function(d) { return d[2];})
+    //         .attr("width", labelWidth)
+    //         .attr("height", labelHeight)
+    //         .style("opacity", 1);
+    //
+    //     var labels = bandLabels.append("text")
+    //         .attr("class", function(d) { return d[1];})
+    //         .attr("id", function(d) { return d[0];})
+    //         .attr("x", function(d) { return d[3];})
+    //         .attr("y", yText)
+    //         .attr("text-anchor", function(d) { return d[0];});
+    //
+    //     labels.redraw = function () {
+    //         var min = band.xScale.domain()[0],
+    //             max = band.xScale.domain()[1];
+    //
+    //         labels.text(function (d) { return d[4](min, max); })
+    //     };
+    //
+    //     band.parts.push(labels);
+    //     components.push(labels);
+    //
+    //     return timeline;
+    // };
 
     //----------------------------------------------------------------------
     //
@@ -663,23 +666,24 @@ const timeline = (domElement, overrideConfig) => {
         band.addActions([
             // trigger, function
             ["mouseover", showTooltip],
+            ["mousemove", moveTooltip],
             ["mouseout", hideTooltip],
             ['click', config.onClick]
         ]);
 
-        function showTooltip (d) {
+        function moveTooltip (d) {
 
-            var x = event.pageX < band.x + band.w / 2
-                ? event.pageX + 10
-                : event.pageX - 110,
-                y = event.pageY < band.y + band.h / 2
-                    ? event.pageY + 30
-                    : event.pageY - 30;
+            const x = event.pageX - document.getElementById(svgId).getBoundingClientRect().x + 10;
+            const y = event.pageY - document.getElementById(svgId).getBoundingClientRect().y + 10;
 
             tooltip
-                .html(config.tooltipContent(d, select(this)))
                 .style("top", y + "px")
-                .style("left", x + "px")
+                .style("left", x + "px");
+        }
+
+        function showTooltip (d) {
+            tooltip
+                .html(config.tooltipContent(d, select(this)))
                 .style("visibility", "visible");
         }
 

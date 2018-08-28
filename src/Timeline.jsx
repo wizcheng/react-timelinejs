@@ -115,7 +115,7 @@ class Timeline extends React.Component {
     };
 
     render() {
-        return <div ref={input => this.div = input}/>
+        return <div className='timeline' ref={input => this.div = input}/>
     }
 }
 
