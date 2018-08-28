@@ -100,17 +100,37 @@
 /*}*/
 
 .tooltip {
-    width: auto;
+    width: 0px;
+    height: 0px;
     position: absolute;
     z-index: 2;
     visibility: hidden;
     color : black;
     cursor:default;
-    background-color: #FFFFEE;
-    border: 1px solid;
-    padding: 4px;
-    shape-rendering: crispEdges;
     pointer-events: none;
+    display: flex;
+}
+
+.tooltip.top-left {
+
+}
+.tooltip.top-right {
+    flex-direction: row-reverse;
+}
+.tooltip.bottom-right {
+    flex-flow: row-reverse wrap-reverse;
+}
+.tooltip.bottom-left {
+    flex-flow: column-reverse;
+}
+
+.tooltip-container {
+    shape-rendering: crispEdges;
+    padding: 4px;
+    min-width: 300px;
+    min-height: 100px;
+    border: 1px solid;
+    background-color: #FFFFEE;
 }
 
 .mouseover-line {

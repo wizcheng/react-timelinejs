@@ -673,17 +673,25 @@ const timeline = (domElement, overrideConfig) => {
 
         function moveTooltip (d) {
 
-            const x = event.pageX - document.getElementById(svgId).getBoundingClientRect().x + 10;
-            const y = event.pageY - document.getElementById(svgId).getBoundingClientRect().y + 10;
+            let x = event.pageX - document.getElementById(svgId).getBoundingClientRect().x;
+            let y = event.pageY - document.getElementById(svgId).getBoundingClientRect().y;
+
+            const leftOrRight = x > band.w / 2 ? 'right' : 'left';
+            const topOfBottom = y > band.h / 2 ? 'bottom' : 'top';
+
+            const offset = 5;
+            x += x > band.w / 2 ? -offset : offset;
+            y += y > band.h / 2 ? -offset : offset;
 
             tooltip
+                .attr('class', `${topOfBottom}-${leftOrRight} tooltip`)
                 .style("top", y + "px")
                 .style("left", x + "px");
         }
 
         function showTooltip (d) {
             tooltip
-                .html(config.tooltipContent(d, select(this)))
+                .html(`<div class='tooltip-container'>${config.tooltipContent(d, select(this))}</div>`)
                 .style("visibility", "visible");
         }
 
