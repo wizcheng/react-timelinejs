@@ -26,6 +26,8 @@ exports[`render empty timeline 1`] = `
                 height=\\"380\\"
           >
           </rect>
+        </g>
+        <g transform=\\"translate(0,0)\\">
           <path d=\\"M0 0 L0 380\\"
                 class=\\"mouseover-line\\"
                 style=\\"display: none;\\"
@@ -96,24 +98,6 @@ exports[`render with custom track height 1`] = `
                 height=\\"380\\"
           >
           </rect>
-          <path d=\\"M0 0 L0 380\\"
-                class=\\"mouseover-line\\"
-                style=\\"display: none;\\"
-          >
-          </path>
-          <rect height=\\"16\\"
-                width=\\"75\\"
-                y=\\"364\\"
-                class=\\"mouseover-label-background\\"
-                style=\\"display: none;\\"
-          >
-          </rect>
-          <text x=\\"0\\"
-                y=\\"376\\"
-                class=\\"mouseover-label\\"
-                style=\\"display: none;\\"
-          >
-          </text>
           <svg y=\\"4\\"
                height=\\"39\\"
                class=\\"part interval\\"
@@ -228,6 +212,26 @@ exports[`render with custom track height 1`] = `
               event 1
             </text>
           </svg>
+        </g>
+        <g transform=\\"translate(0,0)\\">
+          <path d=\\"M0 0 L0 380\\"
+                class=\\"mouseover-line\\"
+                style=\\"display: none;\\"
+          >
+          </path>
+          <rect height=\\"16\\"
+                width=\\"75\\"
+                y=\\"364\\"
+                class=\\"mouseover-label-background\\"
+                style=\\"display: none;\\"
+          >
+          </rect>
+          <text x=\\"0\\"
+                y=\\"376\\"
+                class=\\"mouseover-label\\"
+                style=\\"display: none;\\"
+          >
+          </text>
         </g>
         <g class=\\"axis\\"
            transform=\\"translate(0,380)\\"
@@ -425,24 +429,6 @@ exports[`render with lines 1`] = `
                 d=\\"M361.87797059068413 0 L361.87797059068413 380\\"
           >
           </path>
-          <path d=\\"M0 0 L0 380\\"
-                class=\\"mouseover-line\\"
-                style=\\"display: none;\\"
-          >
-          </path>
-          <rect height=\\"16\\"
-                width=\\"75\\"
-                y=\\"364\\"
-                class=\\"mouseover-label-background\\"
-                style=\\"display: none;\\"
-          >
-          </rect>
-          <text x=\\"0\\"
-                y=\\"376\\"
-                class=\\"mouseover-label\\"
-                style=\\"display: none;\\"
-          >
-          </text>
           <svg y=\\"4\\"
                height=\\"19\\"
                class=\\"part interval\\"
@@ -557,6 +543,26 @@ exports[`render with lines 1`] = `
               event 2
             </text>
           </svg>
+        </g>
+        <g transform=\\"translate(0,0)\\">
+          <path d=\\"M0 0 L0 380\\"
+                class=\\"mouseover-line\\"
+                style=\\"display: none;\\"
+          >
+          </path>
+          <rect height=\\"16\\"
+                width=\\"75\\"
+                y=\\"364\\"
+                class=\\"mouseover-label-background\\"
+                style=\\"display: none;\\"
+          >
+          </rect>
+          <text x=\\"0\\"
+                y=\\"376\\"
+                class=\\"mouseover-label\\"
+                style=\\"display: none;\\"
+          >
+          </text>
         </g>
         <g class=\\"axis\\"
            transform=\\"translate(0,380)\\"
@@ -849,24 +855,6 @@ exports[`render with sample data 1`] = `
                 height=\\"380\\"
           >
           </rect>
-          <path d=\\"M0 0 L0 380\\"
-                class=\\"mouseover-line\\"
-                style=\\"display: none;\\"
-          >
-          </path>
-          <rect height=\\"16\\"
-                width=\\"75\\"
-                y=\\"364\\"
-                class=\\"mouseover-label-background\\"
-                style=\\"display: none;\\"
-          >
-          </rect>
-          <text x=\\"0\\"
-                y=\\"376\\"
-                class=\\"mouseover-label\\"
-                style=\\"display: none;\\"
-          >
-          </text>
           <svg y=\\"4\\"
                height=\\"19\\"
                class=\\"part interval\\"
@@ -981,6 +969,26 @@ exports[`render with sample data 1`] = `
               event 1
             </text>
           </svg>
+        </g>
+        <g transform=\\"translate(0,0)\\">
+          <path d=\\"M0 0 L0 380\\"
+                class=\\"mouseover-line\\"
+                style=\\"display: none;\\"
+          >
+          </path>
+          <rect height=\\"16\\"
+                width=\\"75\\"
+                y=\\"364\\"
+                class=\\"mouseover-label-background\\"
+                style=\\"display: none;\\"
+          >
+          </rect>
+          <text x=\\"0\\"
+                y=\\"376\\"
+                class=\\"mouseover-label\\"
+                style=\\"display: none;\\"
+          >
+          </text>
         </g>
         <g class=\\"axis\\"
            transform=\\"translate(0,380)\\"
@@ -1153,24 +1161,6 @@ exports[`render without label 1`] = `
                 height=\\"380\\"
           >
           </rect>
-          <path d=\\"M0 0 L0 380\\"
-                class=\\"mouseover-line\\"
-                style=\\"display: none;\\"
-          >
-          </path>
-          <rect height=\\"16\\"
-                width=\\"75\\"
-                y=\\"364\\"
-                class=\\"mouseover-label-background\\"
-                style=\\"display: none;\\"
-          >
-          </rect>
-          <text x=\\"0\\"
-                y=\\"376\\"
-                class=\\"mouseover-label\\"
-                style=\\"display: none;\\"
-          >
-          </text>
           <svg y=\\"4\\"
                height=\\"19\\"
                class=\\"part interval\\"
@@ -1267,6 +1257,26 @@ exports[`render without label 1`] = `
             >
             </rect>
           </svg>
+        </g>
+        <g transform=\\"translate(0,0)\\">
+          <path d=\\"M0 0 L0 380\\"
+                class=\\"mouseover-line\\"
+                style=\\"display: none;\\"
+          >
+          </path>
+          <rect height=\\"16\\"
+                width=\\"75\\"
+                y=\\"364\\"
+                class=\\"mouseover-label-background\\"
+                style=\\"display: none;\\"
+          >
+          </rect>
+          <text x=\\"0\\"
+                y=\\"376\\"
+                class=\\"mouseover-label\\"
+                style=\\"display: none;\\"
+          >
+          </text>
         </g>
         <g class=\\"axis\\"
            transform=\\"translate(0,380)\\"

@@ -94,6 +94,7 @@ const timeline = (domElement, overrideConfig) => {
         .append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top +  ")");
 
+    var events = [];
 
     function mousemove() {
         const band = bands['mainBand'];
@@ -350,6 +351,8 @@ const timeline = (domElement, overrideConfig) => {
             .attr("width", band.w)
             .attr("height", band.h);
 
+        band.g2 = chart.append('g')
+            .attr("transform", "translate(0," + band.y +  ")");
 
         band.createOrUpdateLines = () => {
 
@@ -377,7 +380,7 @@ const timeline = (domElement, overrideConfig) => {
         };
         band.createOrUpdateLines();
 
-        const mouseoverLine = band.g.append('path')
+        const mouseoverLine = band.g2.append('path')
             .attr('d', `M0 0 L0 ${band.h}`)
             .attr('class', 'mouseover-line')
             .style('display', 'none')
@@ -385,7 +388,7 @@ const timeline = (domElement, overrideConfig) => {
 
         const mouseoverRectWidth = 75;
         const mouseoverRectHeight = 16;
-        const mouseoverRect = band.g.append('rect')
+        const mouseoverRect = band.g2.append('rect')
             .attr('height', mouseoverRectHeight)
             .attr('width', mouseoverRectWidth)
             .attr('y', band.h - mouseoverRectHeight)
@@ -393,7 +396,7 @@ const timeline = (domElement, overrideConfig) => {
             .style('display', 'none')
         ;
 
-        const mouseoverText = band.g.append('text')
+        const mouseoverText = band.g2.append('text')
             // .attr('d', `M0 0 L0 ${band.h}`)
             .attr('x', 0)
             .attr('y', band.h - 4)
@@ -431,24 +434,11 @@ const timeline = (domElement, overrideConfig) => {
                     return d.instant ? "part instant" : "part interval";
                 });
 
-
-            // if (!band.intervals) {
-            //     band.intervals = band.g.selectAll(".interval");
-            //     band.intervals.append("rect")
-            //         .attr("width", "100%")
-            //         .attr("height", "100%");
-            // }
-
-            // const intervals = band.g.selectAll(".interval");
-
-            // intervals.selectAll('rect').remove();
-
-
-            // if (!band.steps) {
-            //
-            //
-            //
-            // }
+            if (events) {
+                events.forEach(event => {
+                    band.items.on(event[0], event[1])
+                })
+            }
 
             const oldSteps = band.items.selectAll('rect.step')
                 .data(d => d.steps);
@@ -467,10 +457,6 @@ const timeline = (domElement, overrideConfig) => {
                 .attr('height', band.itemHeight)
             ;
 
-            // if (!band.labels) {
-            //     band.labels =
-            // }
-
             band.items.selectAll("text").remove();
 
             if (config.label) {
@@ -488,26 +474,12 @@ const timeline = (domElement, overrideConfig) => {
         };
         band.createOrUpdateInterval();
 
-        // var instants = svg.select("#band" + bandNum).selectAll(".instant");
-        // instants.append("circle")
-        //     .attr("cx", band.itemHeight / 2)
-        //     .attr("cy", band.itemHeight / 2)
-        //     .attr("r", 5);
-        //
-        // if (config.label){
-        //     instants.append("text")
-        //         .attr("class", "instantLabel")
-        //         .attr("x", 15)
-        //         .attr("y", 10)
-        //         .text(function (d) { return d.label; });
-        // }
-
-        band.addActions = function(actions) {
-            // actions - array: [[trigger, function], ...]
-            actions.forEach(function (action) {
-                band.items.on(action[0], action[1]);
-            })
-        };
+        // band.addActions = function(actions) {
+        //     // actions - array: [[trigger, function], ...]
+        //     actions.forEach(function (action) {
+        //         band.items.on(action[0], action[1]);
+        //     })
+        // };
 
 
         band.update = function () {
@@ -661,27 +633,26 @@ const timeline = (domElement, overrideConfig) => {
 
     timeline.tooltips = function (bandName) {
 
-        const band = bands[bandName];
+        // const band = bands[bandName];
 
-        band.addActions([
-            // trigger, function
+        events = [
             ["mouseover", showTooltip],
             ["mousemove", moveTooltip],
             ["mouseout", hideTooltip],
             ['click', config.onClick]
-        ]);
+        ];
 
         function moveTooltip (d) {
 
             let x = event.pageX - document.getElementById(svgId).getBoundingClientRect().x;
             let y = event.pageY - document.getElementById(svgId).getBoundingClientRect().y;
 
-            const leftOrRight = x > band.w / 2 ? 'right' : 'left';
-            const topOfBottom = y > band.h / 2 ? 'bottom' : 'top';
+            const leftOrRight = x > bands['mainBand'].w / 2 ? 'right' : 'left';
+            const topOfBottom = y > bands['mainBand'].h / 2 ? 'bottom' : 'top';
 
             const offset = 5;
-            x += x > band.w / 2 ? -offset : offset;
-            y += y > band.h / 2 ? -offset : offset;
+            x += x > bands['mainBand'].w / 2 ? -offset : offset;
+            y += y > bands['mainBand'].h / 2 ? -offset : offset;
 
             tooltip
                 .attr('class', `${topOfBottom}-${leftOrRight} tooltip`)
@@ -813,14 +784,16 @@ const timeline = (domElement, overrideConfig) => {
     timeline.create = (data, lines, dataRange) => {
         timeline
             .data(data, dataRange)
-            .lines(lines)
-            .band("mainBand")
-            // .band("naviBand", 0.08)
-            .xAxis("mainBand");
+            .lines(lines);
 
         if (config.tooltips) {
             timeline.tooltips("mainBand");
         }
+
+        timeline
+            .band("mainBand")
+            // .band("naviBand", 0.08)
+            .xAxis("mainBand");
 
         if (config.brush) {
             timeline.brush('mainBand');

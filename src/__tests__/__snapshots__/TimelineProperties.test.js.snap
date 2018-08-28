@@ -70,24 +70,6 @@ exports[`render update data properties 1`] = `
                   d=\\"M-305.1455420112698 0 L-305.1455420112698 380\\"
             >
             </path>
-            <path d=\\"M0 0 L0 380\\"
-                  class=\\"mouseover-line\\"
-                  style=\\"display: none;\\"
-            >
-            </path>
-            <rect height=\\"16\\"
-                  width=\\"75\\"
-                  y=\\"364\\"
-                  class=\\"mouseover-label-background\\"
-                  style=\\"display: none;\\"
-            >
-            </rect>
-            <text x=\\"0\\"
-                  y=\\"376\\"
-                  class=\\"mouseover-label\\"
-                  style=\\"display: none;\\"
-            >
-            </text>
             <svg y=\\"4\\"
                  height=\\"19\\"
                  class=\\"part interval\\"
@@ -205,6 +187,26 @@ exports[`render update data properties 1`] = `
                 event 1
               </text>
             </svg>
+          </g>
+          <g transform=\\"translate(0,0)\\">
+            <path d=\\"M0 0 L0 380\\"
+                  class=\\"mouseover-line\\"
+                  style=\\"display: none;\\"
+            >
+            </path>
+            <rect height=\\"16\\"
+                  width=\\"75\\"
+                  y=\\"364\\"
+                  class=\\"mouseover-label-background\\"
+                  style=\\"display: none;\\"
+            >
+            </rect>
+            <text x=\\"0\\"
+                  y=\\"376\\"
+                  class=\\"mouseover-label\\"
+                  style=\\"display: none;\\"
+            >
+            </text>
           </g>
           <g class=\\"axis\\"
              transform=\\"translate(0,380)\\"
@@ -467,24 +469,6 @@ exports[`render update data properties 2`] = `
                   d=\\"M193.87765533423908 0 L193.87765533423908 380\\"
             >
             </path>
-            <path d=\\"M0 0 L0 380\\"
-                  class=\\"mouseover-line\\"
-                  style=\\"display: none;\\"
-            >
-            </path>
-            <rect height=\\"16\\"
-                  width=\\"75\\"
-                  y=\\"364\\"
-                  class=\\"mouseover-label-background\\"
-                  style=\\"display: none;\\"
-            >
-            </rect>
-            <text x=\\"0\\"
-                  y=\\"376\\"
-                  class=\\"mouseover-label\\"
-                  style=\\"display: none;\\"
-            >
-            </text>
             <svg y=\\"4\\"
                  height=\\"19\\"
                  class=\\"part interval\\"
@@ -641,6 +625,26 @@ exports[`render update data properties 2`] = `
                 event 1
               </text>
             </svg>
+          </g>
+          <g transform=\\"translate(0,0)\\">
+            <path d=\\"M0 0 L0 380\\"
+                  class=\\"mouseover-line\\"
+                  style=\\"display: none;\\"
+            >
+            </path>
+            <rect height=\\"16\\"
+                  width=\\"75\\"
+                  y=\\"364\\"
+                  class=\\"mouseover-label-background\\"
+                  style=\\"display: none;\\"
+            >
+            </rect>
+            <text x=\\"0\\"
+                  y=\\"376\\"
+                  class=\\"mouseover-label\\"
+                  style=\\"display: none;\\"
+            >
+            </text>
           </g>
           <g class=\\"axis\\"
              transform=\\"translate(0,380)\\"

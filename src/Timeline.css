@@ -134,10 +134,12 @@
 }
 
 .mouseover-line {
+    pointer-events: none;
     stroke: #0984e3;
 }
 
 .mouseover-label {
+    pointer-events: none;
     fill : white;
     font: 10px sans-serif;
     shape-rendering: crispEdges;
@@ -145,5 +147,6 @@
 }
 
 .mouseover-label-background {
+    pointer-events: none;
     fill: #0984e3;
 }
