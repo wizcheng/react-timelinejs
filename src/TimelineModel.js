@@ -644,8 +644,11 @@ const timeline = (domElement, overrideConfig) => {
 
         function moveTooltip (d) {
 
-            let x = event.pageX - document.getElementById(svgId).getBoundingClientRect().x;
-            let y = event.pageY - document.getElementById(svgId).getBoundingClientRect().y;
+            const offsetX = window.pageXOffset | document.getElementById(svgId).scrollLeft;
+            const offsetY = window.pageYOffset | document.getElementById(svgId).scrollTop;
+
+            let x = event.pageX - document.getElementById(svgId).getBoundingClientRect().x - offsetX;
+            let y = event.pageY - document.getElementById(svgId).getBoundingClientRect().y - offsetY;
 
             const leftOrRight = x > bands['mainBand'].w / 2 ? 'right' : 'left';
             const topOfBottom = y > bands['mainBand'].h / 2 ? 'bottom' : 'top';
