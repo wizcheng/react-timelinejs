@@ -30,7 +30,7 @@ function format(date) {
 }
 
 function getHtml(d, element) {
-    return d.label + "<br>" + format(d.start) + " - " + format(d.end);
+    return d.label + "<br>" + format(d.start.toISOString()) + " - " + format(d.end.toISOString());
 }
 
 const timeline = (domElement, overrideConfig) => {
