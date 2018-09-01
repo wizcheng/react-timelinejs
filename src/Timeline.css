@@ -127,8 +127,8 @@
 .tooltip-container {
     shape-rendering: crispEdges;
     padding: 4px;
-    min-width: 300px;
-    min-height: 100px;
+    width: max-content;
+    height: max-content;
     border: 1px solid;
     background-color: #FFFFEE;
 }
