@@ -131,6 +131,7 @@
     height: max-content;
     border: 1px solid;
     background-color: #FFFFEE;
+    white-space: nowrap;
 }
 
 .mouseover-line {
