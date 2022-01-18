@@ -4,8 +4,8 @@
   "private": true,
   "dependencies": {
     "moment": "^2.22.2",
-    "react": "^16.4.1",
-    "react-dom": "^16.4.1",
+    "react": "^16.5.0",
+    "react-dom": "^16.5.0",
     "react-scripts": "1.1.4",
     "react-timelinejs": "^0.1.19"
   },
